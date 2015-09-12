@@ -1,9 +1,10 @@
 # ROKOS
 Raspbian OKcashpi OS for Raspberry PI - IoT (Internet of Things)
+
 Integrated with OKCash, Bitcoin, Litecoin and Dogecoin Wallets
 
 
-Releases:
+Releases
 
 #ROKOS v2 - Jun 30 2015
 
