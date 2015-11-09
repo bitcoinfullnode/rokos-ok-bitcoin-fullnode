@@ -34,4 +34,4 @@ BitcoinTalk: https://bitcointalk.org/index.php?topic=1084908.0
 
 Raspberry Forums: https://www.raspberrypi.org/forums/viewtopic.php?f=41&t=112913
 
-IRC: #ok-development
+IRC: #okcash
