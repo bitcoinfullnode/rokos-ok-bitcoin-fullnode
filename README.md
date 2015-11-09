@@ -1,10 +1,15 @@
-# ROKOS
+![ROKOS-OK](http://i.imgur.com/x3Oj1NN.png)
+ROKOS IoT
+=========================== 
+* Author: OKtoshi
+
 Raspbian OKcashpi OS for Raspberry PI - IoT (Internet of Things)
 
-Integrated with OKCash, Bitcoin, Litecoin and Dogecoin Wallets
+Integrated with OKCash, Bitcoin and different cryptocurrency Wallets on the different versions
 
 
 Releases
+===========================
 
 #ROKOS v2 - Jun 30 2015
 
@@ -34,4 +39,5 @@ BitcoinTalk: https://bitcointalk.org/index.php?topic=1084908.0
 
 Raspberry Forums: https://www.raspberrypi.org/forums/viewtopic.php?f=41&t=112913
 
-IRC: #okcash
+
+[![Visit the OK Community IRC Chat for Support!](https://kiwiirc.com/buttons/irc.freenode.net/okcash.png)](https://kiwiirc.com/client/irc.freenode.net/?nick=ok|?&theme=cli#okcash)
