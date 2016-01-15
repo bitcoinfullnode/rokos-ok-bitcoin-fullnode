@@ -1,14 +1,43 @@
 # ROKOS
-Raspbian OKcashpi OS for Raspberry PI - IoT (Internet of Things)
+Raspbian OK OS for Raspberry PI and IoT Devices (Internet of Things)
 
-Integrated with OKCash, Bitcoin, Litecoin and Dogecoin Wallets
+Integrated with Bitcoin OK and Cryptocurrencies Full Nodes
+
+#ROKOS Downloads, Resources, Feedback and Support Threads 
+
+Website: http://rokos.space
+
+Website Github: https://github.com/okcashpro/rokos.space
+
+BTCTalk ROKOS core support/feedback: https://bitcointalk.org/index.php?topic=1312616.0
+
+BTCTalk ROKOS flavors support/feedback: https://bitcointalk.org/index.php?topic=1084908.0
+
+Raspberry Forums: https://www.raspberrypi.org/forums/viewtopic.php?f=41&t=112913
+
+Coverage at TechCrunch and CES2016 among others: 
+http://techcrunch.com/2016/01/04/the-rokos-core-os-turns-your-raspberry-pi-into-a-bitcoin-node/
+http://letstalkpayments.com/fintech-at-ces-mastercard-coin-rokos-samsung-and-softbank-are-making-waves/
 
 
 Releases
 
+#ROKOS v4 - Dec 25 2015
+
+Integrated: OKCash synced + Bitcoin / Full Node
+
+Download (Gdrive): 
+http://bit.ly/rokos4core
+
+#ROKOS Core v3 - Dec 19 2015
+
+Integrated: OKCash synced + Bitcoin / Full Node
+
+Short Released for feedback.
+
 #ROKOS v2 - Jun 30 2015
 
-Integrated: OKCash synced + Bitcoin + Litecoin + Dogecoin Wallets
+Integrated: OKCash synced + Bitcoin + Litecoin + Dogecoin / Full Node
 
 Download (Mega): 
 https://mega.nz/#!NA9TWBjC!RoAsvMMsAIQkJ0drXST7-rwZ5b3kLMc5L7pP92NUXWQ
@@ -27,11 +56,6 @@ Integrated: OKCash Synced Wallet
 Download (Mega):
 https://mega.co.nz/#!4ZNXSbhS!l0JwzW7J-RYiKxTDD_6STYj9XjYutm5gflQeFBCU9rw
 
+#Live Support channel
 
-ROKOS Downloads, Feedback and Support Threads 
-
-BitcoinTalk: https://bitcointalk.org/index.php?topic=1084908.0
-
-Raspberry Forums: https://www.raspberrypi.org/forums/viewtopic.php?f=41&t=112913
-
-IRC: #ok-development
+IRC: #okcash
