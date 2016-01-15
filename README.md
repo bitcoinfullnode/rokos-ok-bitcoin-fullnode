@@ -1,4 +1,4 @@
-![ROKOS-OK](http://i.imgur.com/x3Oj1NN.png)
+![ROKOS-OK](http://i.imgur.com/XPXrqBg.png)
 ROKOS IoT
 =========================== 
 * Author: OKtoshi
