@@ -1,5 +1,5 @@
 ![ROKOS-OK](http://i.imgur.com/XPXrqBg.png)
-ROKOS IoT
+ROKOS IoT Open Source
 =========================== 
 * Author: OKtoshi
 
@@ -13,6 +13,8 @@ ROKOS Downloads, Resources, Feedback and Support Threads
 Website: http://rokos.space
 
 Website Github: https://github.com/okcashpro/rokos.space
+
+ROKOS Github: https://github.com/okcashpro/rokos
 
 BTCTalk ROKOS core support/feedback: https://bitcointalk.org/index.php?topic=1312616.0
 
