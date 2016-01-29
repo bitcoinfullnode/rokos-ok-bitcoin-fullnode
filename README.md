@@ -81,10 +81,18 @@ https://mega.co.nz/#!4ZNXSbhS!l0JwzW7J-RYiKxTDD_6STYj9XjYutm5gflQeFBCU9rw
 
 #Donations and Support
 
-* ROKOS is Open Source and shared/released for free, If it helped your project or you like the work and feel kind, you can support the project with a donation at:
+* ROKOS is Open Source and shared/released for free, If it helped your project or you like the work and feel kind and would like to help ROKOS grow continuously, you can support the project with a donation at:
 
-Bitcoin   15VrDkat5vD4FfycRk3E4e7EgqftzK6tm8
-OKcash   PWZg5F7NurKDNGdckRpQgmShEQhEHmF5W5
+BTC   15VrDkat5vD4FfycRk3E4e7EgqftzK6tm8
+
+OK   PWZg5F7NurKDNGdckRpQgmShEQhEHmF5W5
+
+GMC   GZ5tFCMq8UwjgKLnytA9eSRXUdtJjwpwvF
+
+BLK   BG8KTKNXKF3e1fiJTZSCVm5YqkWAxijXto
+
+DMD   dUoWNtLr23Dpnt5sDA6wv399AzJYL54weF
+
 
 
 #Live Support
