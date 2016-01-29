@@ -36,6 +36,13 @@ http://letstalkpayments.com/fintech-at-ces-mastercard-coin-rokos-samsung-and-sof
 Releases
 ===========================
 
+#ROKOS core BTC for BananaPi PRO v4 - Jan 21 2016
+
+Integrated: Bitcoin / Full Node
+
+Download (Gdrive): 
+http://bit.ly/rokos4coreBanana
+
 #ROKOS core BTC v4 - Dec 25 2015
 
 Integrated: OKCash synced + Bitcoin / Full Node
