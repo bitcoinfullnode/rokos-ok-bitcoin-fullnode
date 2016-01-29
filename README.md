@@ -3,7 +3,11 @@ ROKOS IoT Open Source
 =========================== 
 * Author: OKtoshi
 
-Raspbian OK OS for Raspberry PI and IoT Devices (Internet of Things)
+* Project evolution based on feedback/requests/suggestions from: Cryptocurrency developers, Cryptocurrency users and New users to Crypto over any of the public forums (Core, Flavors, Github) where everyone can participate and/or request for support.
+
+* A Big Thank you: Media authors, Donators, Supporters, Collaborators, The Open Source community, the Crypto community and involved cryptocurrencies communities and developers.
+
+Raspi OK OS for Raspberry PI and IoT Devices (Internet of Things)
 
 Native Bitcoin OKCash and Cryptocurrencies Full Nodes / versions for IoT
 
