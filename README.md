@@ -36,28 +36,28 @@ http://letstalkpayments.com/fintech-at-ces-mastercard-coin-rokos-samsung-and-sof
 Releases
 ===========================
 
-#ROKOS core BTC for BananaPi PRO v4 - Jan 21 2016
+#ROKOS core BTC for BananaPi PRO (v4) - Jan 21 2016
 
 Integrated: Bitcoin / Full Node
 
 Download (Gdrive): 
 http://bit.ly/rokos4coreBanana
 
-#ROKOS core BTC v4 - Dec 25 2015
+#ROKOS core BTC for RaspberryPI 2 (v4) - Dec 25 2015
 
 Integrated: OKCash synced + Bitcoin / Full Node
 
 Download (Gdrive): 
 http://bit.ly/rokos4core
 
-#ROKOS Core BTC v3 - Dec 19 2015
+#ROKOS Core BTC for RaspberryPI 2 (v3) - Dec 19 2015
 
 Integrated: OKCash synced + Bitcoin / Full Node
 
 -Short Closed Release for testing and feedback.
 
 
-#ROKOS v2 - Jun 30 2015
+#ROKOS for RaspberryPI B+ / 2  (v2) - Jun 30 2015
 
 Integrated: OKCash synced + Bitcoin + Litecoin + Dogecoin / Full Node
 
@@ -71,12 +71,20 @@ Download (Torrent):
 https://thepiratebay.vg/torrent/12079973
 
 
-#ROKOS v1 - Jun 9 2015 
+#ROKOS for RaspberryPi B+ / 2 (v1) - Jun 9 2015 
 
 Integrated: OKCash Synced Wallet
 
 Download (Mega):
 https://mega.co.nz/#!4ZNXSbhS!l0JwzW7J-RYiKxTDD_6STYj9XjYutm5gflQeFBCU9rw
+
+
+#Donations and Support
+
+* ROKOS is Open Source and shared/released for free, If it helped your project or you like the work and feel kind, you can support the project with a donation at:
+
+Bitcoin   15VrDkat5vD4FfycRk3E4e7EgqftzK6tm8
+OKcash   PWZg5F7NurKDNGdckRpQgmShEQhEHmF5W5
 
 
 #Live Support
