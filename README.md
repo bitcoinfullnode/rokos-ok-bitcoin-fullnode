@@ -91,16 +91,27 @@ https://mega.co.nz/#!4ZNXSbhS!l0JwzW7J-RYiKxTDD_6STYj9XjYutm5gflQeFBCU9rw
 * ROKOS is Open Source and shared/released for free, If it helped your project or you like the work and feel kind and would like to help ROKOS grow continuously, you can support the project with a donation at:
 
 BTC  15VrDkat5vD4FfycRk3E4e7EgqftzK6tm8
+
 OK  PWZg5F7NurKDNGdckRpQgmShEQhEHmF5W5
+
 GMC  GcVNPqcDdqZLbEh65eyo4ADPEKBsU4tyLi
+
 BLK  B8kBAXZbkXDKJ9Zu7dcarUCp8SfnyoKWVe
+
 DMD  dLSokViLNuMD1q6kssWMtv9vvgau4Yo5GV
+
 DGC  DQfpBXe11e7YnWmyNpeg6wkESiWN1ENEPp
+
 ENRG  e7t3em8YTwFRXeSQtXumhDBqQzzphoiQnu
+
 ERC  EKz7czViBqwSu8Ne2omxaznMnkAY4FqkJB
+
 METAL  MNgjwErYStsEfyKiSoUfyoX877kZcSpmZG
+
 MOJO  MSztn2BwFjhgm9e5nEBwDzAr1r4UcxYLRY
+
 TX  Tk38sE6rLz63JtbErecGgqJxdB5RKMdnbz
+
 SOIL  0x3df2e34602fd5711b2f32daebeff96df0a4df113
 
 
