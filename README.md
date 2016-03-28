@@ -1,4 +1,4 @@
-![ROKOS-OK](http://i.imgur.com/XPXrqBg.png)
+![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
 ROKOS IoT Open Source
 =========================== 
 * Author: OKtoshi
@@ -35,6 +35,13 @@ http://letstalkpayments.com/fintech-at-ces-mastercard-coin-rokos-samsung-and-sof
 
 Releases
 ===========================
+
+#ROKOS flavors for Raspberry Pi 2 (v5) - March 07 2016
+
+Integrated: BTC, OK, GMC, BLK, DMD, DGC, ENRG, ERC, METAL, MOJO, SOIL, TX / Full Nodes / Clients
+
+Download (Gdrive): 
+http://bit.ly/rokos5flavors
 
 #ROKOS core BTC for BananaPi PRO (v4) - Jan 21 2016
 
@@ -83,18 +90,20 @@ https://mega.co.nz/#!4ZNXSbhS!l0JwzW7J-RYiKxTDD_6STYj9XjYutm5gflQeFBCU9rw
 
 * ROKOS is Open Source and shared/released for free, If it helped your project or you like the work and feel kind and would like to help ROKOS grow continuously, you can support the project with a donation at:
 
-BTC   15VrDkat5vD4FfycRk3E4e7EgqftzK6tm8
-
-OK   PWZg5F7NurKDNGdckRpQgmShEQhEHmF5W5
-
-GMC   GZ5tFCMq8UwjgKLnytA9eSRXUdtJjwpwvF
-
-BLK   BG8KTKNXKF3e1fiJTZSCVm5YqkWAxijXto
-
-DMD   dUoWNtLr23Dpnt5sDA6wv399AzJYL54weF
-
+BTC  15VrDkat5vD4FfycRk3E4e7EgqftzK6tm8
+OK  PWZg5F7NurKDNGdckRpQgmShEQhEHmF5W5
+GMC  GcVNPqcDdqZLbEh65eyo4ADPEKBsU4tyLi
+BLK  B8kBAXZbkXDKJ9Zu7dcarUCp8SfnyoKWVe
+DMD  dLSokViLNuMD1q6kssWMtv9vvgau4Yo5GV
+DGC  DQfpBXe11e7YnWmyNpeg6wkESiWN1ENEPp
+ENRG  e7t3em8YTwFRXeSQtXumhDBqQzzphoiQnu
+ERC  EKz7czViBqwSu8Ne2omxaznMnkAY4FqkJB
+METAL  MNgjwErYStsEfyKiSoUfyoX877kZcSpmZG
+MOJO  MSztn2BwFjhgm9e5nEBwDzAr1r4UcxYLRY
+TX  Tk38sE6rLz63JtbErecGgqJxdB5RKMdnbz
+SOIL  0x3df2e34602fd5711b2f32daebeff96df0a4df113
 
 
 #Live Support
 
-[![Visit the OK Community IRC Chat for Support!](https://kiwiirc.com/buttons/irc.freenode.net/okcash.png)](https://kiwiirc.com/client/irc.freenode.net/?nick=ok|?&theme=cli#okcash)
+[![Visit the OK Community Slack for Support!](https://kiwiirc.com/buttons/irc.freenode.net/okcash.png)](https://okcash.herokuapp.com/)
