@@ -1,5 +1,5 @@
 ![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
-ROKOS IoT Open Source
+ROKOS IoT Bitcoin and Cryptocurrencies Fullnode Open Source
 =========================== 
 * Author: OKtoshi
 
@@ -115,6 +115,6 @@ TX  Tk38sE6rLz63JtbErecGgqJxdB5RKMdnbz
 SOIL  0x3df2e34602fd5711b2f32daebeff96df0a4df113
 
 
-#Live Support
+#Live Support @ OK Community Slack
 
-[![Visit the OK Community Slack for Support!](https://kiwiirc.com/buttons/irc.freenode.net/okcash.png)](https://okcash.herokuapp.com/)
+[![Visit the OK Community Slack for Support!](https://kiwiirc.com/buttons/irc.freenode.net/ok-rokos-support.png)](https://okcash.herokuapp.com/)
