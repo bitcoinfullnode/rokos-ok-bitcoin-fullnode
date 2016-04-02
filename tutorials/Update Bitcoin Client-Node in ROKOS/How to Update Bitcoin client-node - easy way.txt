@@ -1,25 +1,25 @@
-To compile the bitcoin client into the ROKOS system you can follow next steps:
+Method to Update Bitcoin on the ROKOS system.
 
-Type all the commands in the terminal:
+1.- Download the Client/node from the Official ROKOS Github client-nodes section at
+https://github.com/okcashpro/ROKOS-OK-Bitcoin-Fullnode/tree/master/clients-nodes
 
+2.- Open a terminal in ROKOS, go to the folder where the new downloaded files are.
 
-sudo apt-get install libevent-dev
+3.- Give permissions and copy all the files to system by Typing:
 
-git clone -b 0.12 https://github.com/bitcoin/bitcoin 
+sudo chmod 755 bitcoin-qt
 
-cd bitcoin
+sudo chmod 755 bitcoind
 
-export CPATH="/usr/local/BerkeleyDB.4.8/include"
+sudo chmod 755 bitcoin-tx
 
-export LIBRARY_PATH="/usr/local/BerkeleyDB.4.8/lib"
+sudo cp bitcoin-qt /usr/local/bin/
 
-./autogen.sh
+sudo cp bitcoind /usr/local/bin/
 
-./configure --enable-upnp-default --with-gui
+sudo cp bitcoin-tx /usr/local/bin/
 
-make
+* do with all the included download files except the *******.conf file.
 
-sudo make install
-
-
-** Congratulations, you just compiled the latest Bitcoin Client-Node into your ROKOS system.
+4.- Congratulations, your Bitcoin client/nodes are upgraded on your ROKOS system!
+(you can delete the files you just downloaded, you already copied them to the system folder)
