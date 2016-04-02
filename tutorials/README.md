@@ -1,4 +1,4 @@
 ![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
-ROKOS IoT Bitcoin and Cryptocurrencies Fullnode Open Source
+Tutorials Section for ROKOS Bitcoin Fullnode OS
 =========================== 
-* Tutorials and/or feedback fixes to optimize performance.
+* Tutorials, How To, Tips and/or feedback fixes to optimize performance.

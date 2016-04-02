@@ -1,4 +1,6 @@
 ![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
-ROKOS IoT Bitcoin and Cryptocurrencies Fullnode Open Source
+Tutorials to Update the Integrated Cryptocurrencies Clients-Nodes in the ROKOS System
 =========================== 
-* Tutorials to Update the Integrated Cryptocurrencies Clients-Nodes in ROKOS.
+* Permanent Integrated Cryptocurrencies:
+
+- Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash.
