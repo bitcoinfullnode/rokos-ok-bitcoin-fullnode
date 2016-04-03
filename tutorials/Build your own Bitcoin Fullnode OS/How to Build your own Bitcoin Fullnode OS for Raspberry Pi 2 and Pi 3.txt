@@ -26,7 +26,7 @@ Here, we will do next things:
 b.1) Expand the Filesystem by choosing option 1 and Reboot.
 You will get a message Root partition has been resized.
 
-b.2) Change the User Password by choosing option 2. 
+b.2) Select your Proper Time Zone and Change the User Password by choosing option 2. 
 Enter your new password twice. 
 When entering the password, the characters won’t be displayed as a security feature. 
 You will get a message Password changed successfully.
