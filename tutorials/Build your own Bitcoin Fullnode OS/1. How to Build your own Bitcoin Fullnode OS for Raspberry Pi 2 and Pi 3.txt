@@ -148,12 +148,14 @@ bitcoind
 
 9.- Enjoy your Bitcoin Fullnode. 
 
-**Note, need to add steps to optimize the system in this section
-: 
-will add the striping of raspbian in this section (removal of included software in the raspbian os that most people do not use to reduce the size in disk.
+**Optional steps to optimize the system:
 
-will add icon addition to taskbar how to.
+Follow the tutorials:
 
-more details on the datadir use.
+2. Strip Down Raspbian Jessie for Raspberry Pi 2 and Pi 3.txt
+
+3. Add Bitcoin client link to the Menu-Taskbar in Raspbian.txt (soon)
+
+4. Bitcoin Datadir optimizations.txt (soon)
 
 links to bitcoin command list and other tutorials.
