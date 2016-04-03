@@ -1,0 +1,159 @@
+Learn more about ROKOS Bitcoin Fullnode OS.
+
+Steps to follow if you would like to build your own bitcoin fullnode platform, all commands are to be used in the command line (terminal):
+
+**************
+
+1.- Distribution Image from RaspberryPi.org
+
+The distribution version we need to flash on the SD card 
+is the lastest Stable Raspbian Image from: 
+https://www.raspberrypi.org/downloads/raspbian/
+
+**************
+
+2.- Setup Raspbian in the Pi
+
+a) Insert the flashed SD with Raspbian in the Raspberry Pi 2/3.
+
+b) Plug in the USB mouse, the USB keyboard, the HDMI screen, the network cable, and the power cable.
+
+The Raspberry Pi will boot for the first time and you will be presented with the Raspberry Pi Software Configuration Tool (raspi-config). 
+To navigate in this tool, the useful keys are:
+The up/down arrow, the Enter key, and the Tab key whenever the up/down arrow keys don’t do the job. 
+Here, we will do next things:
+
+b.1) Expand the Filesystem by choosing option 1 and Reboot.
+You will get a message Root partition has been resized.
+
+b.2) Change the User Password by choosing option 2. 
+Enter your new password twice. 
+When entering the password, the characters won’t be displayed as a security feature. 
+You will get a message Password changed successfully.
+
+We are done with the raspi-config tool. Select Finish and reboot the Pi.
+
+Note: If you ever need to open the raspi-config tool again, simply type sudo raspi-config at the Terminal.
+
+**************
+
+3.- Update the Raspberry Pi device.
+
+Run the following commands:
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+*When asked to do so, press the y key followed by the Enter key. 
+You will need to that every time the message appears in the other steps below.
+
+**************
+
+4.- Setting up the Raspberry Pi for compiling Bitcoin.
+
+a) Change Swap Size.
+
+Use the following command to change the default swap size:
+
+sudo nano /etc/dphys-swapfile
+
+Make sure it reads CONF_SWAPSIZE=1024
+Use the left/right arrow keys to navigate the file.
+After change is done, press Ctrl+O followed by the Enter key to save the file.
+Then, press Ctrl+X to exit the editor.
+
+Use the following commands to enable the swap file with its new size:
+
+sudo dphys-swapfile setup
+
+sudo dphys-swapfile swapon
+
+You can check the new active swap size with next command:  
+
+free -m
+
+b) Install Required Dependencies with next commands:
+
+sudo apt-get install autoconf libtool libssl-dev libboost-all-dev libminiupnpc-dev eject
+
+sudo apt-get install qt4-dev-tools qt4-qmake libqt4-dev libevent-dev libprotobuf-dev protobuf-compiler libqrencode-dev git
+
+c) Compile and Install BerkeleyDB 4.8.30 by running the following commands:
+
+wget http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz
+
+sudo tar -xzvf db-4.8.30.NC.tar.gz
+
+cd db-4.8.30.NC/build_unix
+
+../dist/configure --enable-cxx
+
+make
+
+sudo make install
+
+export CPATH="/usr/local/BerkeleyDB.4.8/include"
+
+export LIBRARY_PATH="/usr/local/BerkeleyDB.4.8/lib"
+
+Note: the export commands are only valid in the current Terminal session. 
+To avoid errors, don't close the Terminal until you fully completed with Bitcoin compilation.
+
+** if get an error do:
+
+sudo ln -s /usr/local/BerkeleyDB.4.8/lib/libdb-4.8.so /usr/lib/libdb-4.8.so
+
+sudo ln -s /usr/local/BerkeleyDB.4.8/lib/libdb_cxx-4.8.so /usr/lib/libdb_cxx-4.8.so
+
+**************
+
+5.- Clone the Bitcoin Github, compile and install the client / node with following commands:
+
+git clone -b 0.12 https://github.com/bitcoin/bitcoin 
+
+cd bitcoin
+
+./autogen.sh
+
+./configure --enable-upnp-default --with-gui
+
+make
+
+sudo make install
+
+**************
+
+6.- Restart/Reboot the system with:
+
+sudo reboot
+
+**************
+
+7.- Start the OS with:
+
+startx
+
+**************
+
+8.- open a terminal, you can start the bitcoin client with:
+
+bitcoin-qt
+
+or can start the bitcoin daemon with:
+
+bitcoind
+
+**************
+
+9.- Enjoy your Bitcoin Fullnode. 
+
+**Note, need to add steps to optimize the system in this section
+: 
+will add the striping of raspbian in this section (removal of included software in the raspbian os that most people do not use to reduce the size in disk.
+
+will add icon addition to taskbar how to.
+
+more details on the datadir use.
+
+links to bitcoin command list and other tutorials.
