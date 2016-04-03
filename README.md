@@ -3,6 +3,8 @@ ROKOS IoT Bitcoin and Cryptocurrencies Fullnode Open Source
 =========================== 
 * Author: OKtoshi
 
+* Integrated Cryptocurrencies in the Fullnode OS: Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash.
+
 * Project evolution based on feedback/requests/suggestions from: Cryptocurrency developers, Cryptocurrency users and New users to Crypto over any of the public forums (Core, Flavors, Github) where everyone can get involved, participate and/or request for support.
 
 * A Big Thank you: Media authors, Donators, Supporters, Collaborators, The Open Source community, the Crypto community and involved cryptocurrencies communities and developers.
