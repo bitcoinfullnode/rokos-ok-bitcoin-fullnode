@@ -20,7 +20,7 @@ Website: http://rokos.space
 
 Website Github: https://github.com/okcashpro/rokos.space
 
-ROKOS Github: https://github.com/okcashpro/rokos
+ROKOS Github: https://github.com/okcashpro/ROKOS-OK-Bitcoin-Fullnode
 
 BTCTalk ROKOS Core support/feedback: https://bitcointalk.org/index.php?topic=1312616.0
 
