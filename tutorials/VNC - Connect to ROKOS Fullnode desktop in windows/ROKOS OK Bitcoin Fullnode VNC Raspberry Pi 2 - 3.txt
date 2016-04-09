@@ -1,0 +1,23 @@
+Method to connect to the ROKOS OK Bitcoin Fullnode Desktop.
+
+Install XRDP server
+
+1.- Open the bash commandline (Terminal) and type next commands 
+    in ROKOS Raspberry Pi:
+
+sudo apt-get install xrdp
+
+sudo apt-get upgrade xrdp
+
+2.- Now you can use Microsoft Remote Desktop and work remotely
+    on ROKOS Raspberry Pi 2 3.
+
+    In your Windows system:
+
+go to start -> open -> and type "mstsc"
+
+Enter your Raspberry's Pi 2 or 3 IP (example: 192.168.1.5)
+
+Connect and sign in with your ROKOS Raspberry Pi User and Password.
+
+**You are done, Have a great experience!
