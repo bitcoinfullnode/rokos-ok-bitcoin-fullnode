@@ -3,7 +3,7 @@ ROKOS IoT Bitcoin and Cryptocurrencies Fullnode Open Source
 =========================== 
 * Author: OKtoshi
 
-* Integrated Cryptocurrencies in the Fullnode OS: Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash.
+* Integrated Cryptocurrencies in the Fullnode OS: Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash, Horizon.
 
 * Project evolution based on feedback/requests/suggestions from: Cryptocurrency developers, Cryptocurrency users and New users to Crypto over any of the public forums (Core, Flavors, Github) where everyone can get involved, participate and/or request for support.
 
@@ -96,26 +96,23 @@ BTC  15VrDkat5vD4FfycRk3E4e7EgqftzK6tm8
 
 OK  PWZg5F7NurKDNGdckRpQgmShEQhEHmF5W5
 
-GMC  GcVNPqcDdqZLbEh65eyo4ADPEKBsU4tyLi
+GMC  GVeKe7MyeSQsLs9iySyYdSrW76jiaPxUF9
 
-BLK  B8kBAXZbkXDKJ9Zu7dcarUCp8SfnyoKWVe
+BLK  BKzPcMGjS7tSJTUengoZG7fS713wkyYsGR
 
-DMD  dLSokViLNuMD1q6kssWMtv9vvgau4Yo5GV
+DMD  dNSN4wXuXoPZuqW9kuxTod5uSpqSopz8Ga
 
-DGC  DQfpBXe11e7YnWmyNpeg6wkESiWN1ENEPp
+DGC  DApYaRBZhuxkKZCogjJPhSGfkV3GbPD3Sm
 
-ENRG  e7t3em8YTwFRXeSQtXumhDBqQzzphoiQnu
+ENRG  e2wKQAT6AJfognrBsJg7RCQ9t6byMgRxd1
 
-ERC  EKz7czViBqwSu8Ne2omxaznMnkAY4FqkJB
+ERC  EM8QAU6XeVjCDRtjbQAEfgKwZVkKp7ozjy
 
-METAL  MNgjwErYStsEfyKiSoUfyoX877kZcSpmZG
+METAL  MNWpG8pnL5eH2Gqiek8qGU52ccNPrGMmHz
 
-MOJO  MSztn2BwFjhgm9e5nEBwDzAr1r4UcxYLRY
+TX  TdyXmvq92KVK8qdRFCuJHLs6APmsncFtNn
 
-TX  Tk38sE6rLz63JtbErecGgqJxdB5RKMdnbz
-
-SOIL  0x3df2e34602fd5711b2f32daebeff96df0a4df113
-
+SOIL  0xad230853bde9c38707f78c2392886d158273cdfc
 
 #Live Support @ OK Community Slack
 
