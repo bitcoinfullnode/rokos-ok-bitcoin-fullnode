@@ -1,0 +1,9 @@
+Fixed a bug in transaction validation that could break blockchain downloading.
+The default (and minimum allowed) value for nxt.maxRollback is now 1441.
+
+Restrict maximum HTTP request and response size in peer networking to prevent
+potential out of memory attacks.
+
+Ctrl-C can now stop the server without having to wait for initial rescan to
+complete.
+

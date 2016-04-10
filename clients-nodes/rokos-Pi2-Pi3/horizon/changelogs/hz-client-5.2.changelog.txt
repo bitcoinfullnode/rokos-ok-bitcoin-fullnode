@@ -1,0 +1,55 @@
+This release is a mandatory upgrade! It introduces a lot of new features, and makes a hard fork necessary at the block height of 515000.
+
+This release requires Java 8 and will not compile nor run with Java 7.
+
+The database upgrade from v4.0e may take up to 3 hours.
+Upgrades from HZ v3.8.x and HZ v3.9.x are also supported, but the database will be emptied.
+
+The fastest way (about 5 minutes - depending on download bandwidth) to upgrade to  
+Horizon version v5.2 is to download the database files, instead of upgrading or starting from scratch with an empty database.
+Database files can be found here:
+http://hz-services.com/downloads/nhz_dbs/
+
+Horizon code changes:
+Horizon UPnP replaced with new Nxt UPnP code
+WebSockets are disabled by default
+GUI login with account alias
+GUI can optional encrypt and store secret in web browser
+After hard fork guaranteed balance confirmations need 1440 blocks instead of 40 blocks
+Support for hzannounce.com added
+Checkpoints updated
+Horizon merged with Nxt client version 1.5.15
+
+New features from Nxt introduced with this release are:
+Prunable messages/file upload up to 42KB, by default deleted after 2 weeks
+Voting System (polls)
+Phasing transactions (multi signature transactions)
+Plugin support
+Parallel blockchain download after hard fork
+
+The following features will be available after block 515000:
+Digital Good Store, Monetary System (Currencies), Dividend Payments, 
+Alias Deletion, Prunable Messages, Voting System, Phasing
+
+License:
+Nxt 1.5.x is now distributed under the GNU General Public License version 2 except the GUI source code, which still remains under the MIT license.
+Affected horizon source code is now also distributed under the GNU General Public License version 2. GUI code is not affected.
+
+Please look at the Nxt client changelog files for more details. The changelog files are 
+included in the release in the subdirectory changelogs/ 
+nxt-client-1.5.1e.changelog.txt
+nxt-client-1.5.2e.changelog.txt
+nxt-client-1.5.3e.changelog.txt
+nxt-client-1.5.4e.changelog.txt
+nxt-client-1.5.5e.changelog.txt
+nxt-client-1.5.6e.changelog.txt
+nxt-client-1.5.7e.changelog.txt
+nxt-client-1.5.8e.changelog.txt
+nxt-client-1.5.9.changelog.txt
+nxt-client-1.5.10.changelog.txt
+nxt-client-1.5.11.changelog.txt
+nxt-client-1.5.12.changelog.txt
+nxt-client-1.5.13.changelog.txt
+nxt-client-1.5.14.changelog.txt
+nxt-client-1.5.15.changelog.txt
+

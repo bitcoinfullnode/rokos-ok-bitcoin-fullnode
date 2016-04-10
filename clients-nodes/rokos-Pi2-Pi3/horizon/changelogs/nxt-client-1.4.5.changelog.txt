@@ -1,0 +1,6 @@
+Enable Monetary System at block 330000. This is a hard fork, therefore everybody
+should upgrade to 1.4.5 or later before that.
+
+If upgrading from 1.3.x, read the 1.4.0e and later changelogs for the important
+changes and new features introduced in the 1.4 series.
+

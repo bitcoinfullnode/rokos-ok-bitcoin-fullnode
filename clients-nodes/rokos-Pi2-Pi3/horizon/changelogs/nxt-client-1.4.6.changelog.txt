@@ -1,0 +1,13 @@
+Set MS block to 330000 in the UI too, so that the MS features menu appears
+after that height.
+
+Enforce that currency exchange offer expiration height is after the current
+blockchain height.
+
+Refactoring of the UI html, splitting index.html into multiple files.
+
+Added offer and transfer links to currency exchange booth UI.
+
+This release will perform a rescan on testnet only, with a rollback to block
+159305.
+

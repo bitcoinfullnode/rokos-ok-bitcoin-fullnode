@@ -1,0 +1,97 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright © 2013-2015 The Nxt Core Developers.                            ~
+  ~                                                                           ~
+  ~ See the AUTHORS.txt, DEVELOPER-AGREEMENT.txt and LICENSE.txt files at     ~
+  ~ the top-level directory of this distribution for the individual copyright ~
+  ~ holder information and the developer policies on copyright and licensing. ~
+  ~                                                                           ~
+  ~ Unless otherwise agreed in a custom licensing agreement, no part of the   ~
+  ~ Nxt software, including this file, may be copied, modified, propagated,   ~
+  ~ or distributed except according to the terms contained in the LICENSE.txt ~
+  ~ file.                                                                     ~
+  ~                                                                           ~
+  ~ Removal or modification of this copyright notice is prohibited.           ~
+  ~                                                                           ~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<div id="transactions_page" class="paginated page">
+    <section class="content-header">
+        <h1 data-i18n="my_transactions">My Transactions</h1>
+    </section>
+
+    <section class="content">
+        <div class="panel panel-default" style="margin-bottom:4px;" id="transactions_type_navi_box">
+            <div class="panel-body">
+                <div style="float:right;padding-top:3px;">
+                    <a href="#" data-i18n="show_type_menu" class="btn btn-default" id="transactions_sub_type_show_hide_btn" role="button">Show Type Menu</a>
+                </div>
+                <ul class="nav nav-pills" id="transactions_type_navi"></ul>
+            </div>
+        </div>
+        <div class="panel panel-default" style="display:none;margin-bottom:10px;" id="transactions_sub_type_navi_box">
+            <div class="panel-body">
+                <ul class="nav nav-pills" id="transactions_sub_type_navi"></ul>
+            </div>
+        </div>
+        <div class="panel panel-default">
+        <div class="data-container data-loading panel-body table-responsive">
+            <table class="table table-striped" id="transactions_table">
+                <thead>
+                <tr>
+                    <th data-i18n="transaction">Transaction</th>
+                    <th style="width:60px;text-align:center;"><i class="fa fa-envelope-o"></i></th>
+                    <th data-i18n="type">Type</th>
+                    <th data-i18n="amount" colspan="2">Amount</th>
+                    <th style="text-align:center;" data-i18n="fee">Fee</th>
+                    <th data-i18n="account">Account</th>
+                    <th style="text-align:center;"><i class="fa fa-gavel"></i></th>
+                    <th style="text-align:center;" data-i18n="conf_abbrev">Conf.</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="data-loading-container"><img src="img/loading_indicator.gif" alt="Loading..." width="32" height="32" /></div>
+            <div class="data-empty-container" style="text-align:center;">
+                <p style="padding-top:80px;padding-bottom:100px;"><span data-i18n="no_transactions_found">No transactions found</span>.</p>
+            </div>
+        </div>
+    </div>
+        <div class="data-pagination"></div>
+    </section>
+</div>
+
+<div id="approval_requests_account_page" class="paginated page">
+    <section class="content-header">
+        <h1><span data-i18n="approval_requests">Approval Requests</span> (<span data-i18n="account">Account</span>)</h1>
+    </section>
+
+    <section class="content" style="margin-top:40px;">
+        <div class="panel panel-default">
+            <div class="data-container data-loading panel-body table-responsive">
+                <table class="table table-striped" id="approval_requests_account_table">
+                    <thead>
+                    <tr>
+                        <th data-i18n="transaction">Transaction</th>
+                        <th style="width:60px;text-align:center;"><i class="fa fa-envelope-o"></i></th>
+                        <th data-i18n="type">Type</th>
+                        <th data-i18n="amount" colspan="2">Amount</th>
+                        <th style="text-align:center;" data-i18n="fee">Fee</th>
+                        <th data-i18n="account">Account</th>
+                        <th style="text-align:center;"><i class="fa fa-gavel"></i></th>
+                        <th style="text-align:center;" data-i18n="conf_abbrev">Conf.</th>
+                        <th data-i18n="actions" style="text-align:right;">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="data-loading-container"><img src="img/loading_indicator.gif" alt="Loading..." width="32" height="32" /></div>
+                <div class="data-empty-container" style="text-align:center;">
+                    <p style="padding-top:80px;padding-bottom:100px;"><span data-i18n="no_current_approval_requests">No current approval requests</span>.</p>
+                </div>
+            </div>
+        </div>
+        <div class="data-pagination"></div>
+    </section>
+</div>

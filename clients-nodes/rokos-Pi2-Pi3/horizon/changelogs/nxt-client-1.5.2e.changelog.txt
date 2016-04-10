@@ -1,0 +1,60 @@
+This is an experimental release. It is a required update for all testnet nodes,
+but is also possible to run on main net.
+
+Added getAllPrunableMessages API, returning all currently available prunable
+messages in reverse block timestamp order.
+
+Added verifyPrunableMessage API, which can be used to verify that a prunable
+message obtained from another node (a service provider) matches the hash found
+in the blockchain, i.e. has not been tampered with.
+
+Show maxPrunableLifetime setting in getState and getBlockchainStatus. Show
+current number of prunable messages in getState.
+
+Changing the nxt.maxPrunableLifetime property now also affects existing
+prunable messages (next time pruning is run), as transaction timestamps instead
+of expiration timestamps are now used.
+
+Reverted DGS goods delivery maximum size to 10 kbytes, same as in 1.4. For
+goods of a larger size, a prunable encrypted message should be included in the
+delivery instead.
+
+Removed core restriction on 28 byte minimum prunable message length, this will
+be checked by the client UI only.
+
+Added nxt.includeExpiredPrunables property, to be able to force to still
+include the prunable parts in the returned transaction JSON, even if expired,
+as long as they are still available. Can be used to force an archival node to
+always return those, thus allowing another archival node that feeds from it to
+also get all of them.
+
+Limit the number of unconfirmed transactions that can be brought in memory to
+nxt.maxUnconfirmedTransactions, no limit by default. If set, transactions with
+lowest fee/size ratio are dropped from the unconfirmed pool first. The ordering
+is same as the one used when selecting which transactions to include in a new
+block.
+
+Added requeueUnconfirmedTransactions debug API.
+
+Added support for uncompressed non-prunable encrypted messages and encrypted
+to self messages, as a new appendix version, to avoid the need to specify the
+compression status as a request parameter when reading them.
+
+Added setLogging API, to allow changing log levels without having to restart
+the server.
+
+Added eventRegister and eventWait APIs, to be used for registering listeners
+and waiting for server events instead of polling.
+
+Changed the parameters accepted by broadcastTransaction. The prunable parts
+must be submitted either in the transactionJSON, or, if using transactionBytes,
+in a new prunableAttachmentJSON parameter, which has the same format as the
+transaction attachment json. The prunableAttachmentJSON is also returned by
+the signTransaction and getTransactionBytes APIs now.
+
+Added support for prunable plain and encrypted messages in the client UI.
+
+Added optional buyer parameter to getDGSGoodsPurchases API.
+
+Voting system UI improvements and bugfixes.
+

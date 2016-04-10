@@ -1,0 +1,21 @@
+Added availableOnly parameter to getBuyOffers and getSellOffers, to return
+only exchange offers with non-zero supply and limit, default false. This
+parameter is however ignored when both currency and account are specified in
+the above APIs.
+
+Added getExchangesByOffer API to get executed currency exchanges for an offer.
+
+Do not log currency exchanges of zero amount.
+
+Fixed setting of peer state. Improvements in connecting to peers.
+
+Added README.md, DEVELOPERS-GUIDE.md OPERATORS-GUIDE.md, and USERS-GUIDE.md
+files.
+
+Added search for currencies based on code, name, or description keywords.
+
+Fixed bugs in unconfirmed balance handling in currency exchange and currency
+deletion.
+
+This release will perform a rescan, on testnet only.
+

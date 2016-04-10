@@ -1,0 +1,29 @@
+Removed some validations and logic no longer needed after the Monetary System
+block.
+
+Added a checkpoint at block 330000.
+
+Various minor UI bugfixes.
+
+Fixed currency search. Fixed handling of very high minting difficulties.
+Fixed concurrency issues with Scrypt minting, can use multiple threads now.
+
+Allow use of https for submitting minting transactions, set
+nxt.mint.useHttps=true. Note that this will accept any SSL certificate as valid,
+therefore will not protect you against man-in-the-middle attacks when minting.
+
+Allow no more than one unconfirmed minting transaction per account and minted
+currency to be accepted in the unconfirmed pool.
+
+Improvements in translations handling, documented in DEVELOPERS-GUIDE.md.
+
+Better validation of hallmarks for peers with multiple addresses. Do not
+blacklist peers with invalid hallmarks but just treat them as not hallmarked.
+
+Blacklist peers with versions older than 1.4.
+
+As more than 720 blocks have passed since the MS block, nodes older than 1.4
+are now on a fork that will not be resolved by itself. To fix that, upgrading
+such nodes from a version older than 1.4 to this release will cause deletion
+and full download of the blockchain.
+

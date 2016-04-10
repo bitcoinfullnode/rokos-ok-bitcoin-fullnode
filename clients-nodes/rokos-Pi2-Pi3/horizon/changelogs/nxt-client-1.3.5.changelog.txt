@@ -1,0 +1,36 @@
+Added getDGSTagCount API, allow getDGSGoodsCount and getDGSPurchaseCount to be
+used also to get total goods or purchase counts.
+
+Added completed parameter to getDGSGoodsPurchases, getDGSGoodsPurchaseCount,
+getDGSPurchaseCount, getDGSPurchases, to allow querying for completed purchases
+only. Added withPublicFeedbacksOnly parameter to getDGSPurchaseCount.
+
+Secondary sort of search results after sorting by relevance, by timestamp if
+for any seller, or by name and then by timestamp if for a single seller.
+
+Improved performance of Marketplace page, show counts for goods in stock only.
+
+Increased default purchase delivery deadline to 168 hours (1 week).
+
+Include full peer info in getPeers API if includePeerInfo=true, to avoid having
+to do a separate getPeer request for each peer.
+
+Include cumulativeDifficulty in the block JSON.
+
+Allow transaction signing in signTransaction to skip the validation of the
+transaction bytes being signed, if an optional validate=false parameter is added.
+This would be useful when signing transaction bytes on a machine that doesn't have
+the full blockchain downloaded, which normally prevents validation.
+
+Allow sending messages with no recipient.
+
+Automatically blacklist peers with version older than 1.2.0.
+
+UI improvements of the API /test page.
+
+Changed nxt-default.properties to enable MVCC by default, to avoid database lock
+timeout errors.
+
+Updated jetty to version 9.2.6. If unpacking on top of a previous installation,
+delete your lib directory first to remove the old jetty libraries.
+

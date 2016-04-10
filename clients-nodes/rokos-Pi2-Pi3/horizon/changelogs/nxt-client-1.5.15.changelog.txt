@@ -1,0 +1,102 @@
+Full offline transaction signing support.
+
+The purpose of this security feature is to allow users to sign transactions
+without ever entering their passphrase on a workstation connected to the
+internet, thus avoiding the risk of having their passphrase stolen by locally
+installed malware such as key loggers or copy/paste loggers, or malicious
+plugins.
+
+As a prerequisite to using this feature, users should setup two workstations:
+
+(1) online with up to date blockchain, on which transactions will be prepared;
+
+(2) offline with Java and NXT installed, but without internet connection, and
+without needing to have up to date blockchain, on which transactions will be
+signed.
+
+The nxt.isOffline=true parameter can be used on the offline machine to make
+sure it doesn't even try to connect to peers or to listen on the peer port.
+
+In addition, users should prepare either a web camera to scan QR codes, or a
+USB stick to copy data between the workstations.
+
+The following procedure should be followed:
+
+On the online workstation - users can create a transaction without entering
+their passphrase. Click on the "advanced" link, check the "Do Not Broadcast"
+option, and then check the newly added "Do Not Sign" option that appears.
+When "Do Not Sign" is checked, the passphrase field is cleared and disabled.
+
+If the account submitting the transaction does not yet have its public key
+announced, a separate input field appears, to allow entering the public key.
+
+In response, the server returns the unsigned transaction JSON, and in case
+there are no message attachments to be encrypted, also the unsigned
+transaction bytes.
+
+The client now displays the "Raw Transaction Details" modal with the unsigned
+transaction JSON, and the unsigned transaction bytes (including a QR code
+representing them), if those exist.
+
+The unsigned transaction bytes do not include the prunable attachments,
+however they can still be used for signing the transaction, and also for
+broadcasting the transaction in case no prunable attachments exist.
+
+Users can transfer the unsigned transaction bytes to the offline workstation
+by scanning the QR code, or download the unsigned transaction JSON to a file
+by clicking the download icon, and transfer it using a USB stick to the
+offline workstation.
+
+On the offline workstation - users should use the "Transaction Operations"
+modal, "Sign Transaction" tab, to sign the unsigned transaction JSON, which
+can be uploaded from a file.
+
+In response, a signature field is displayed, with a QR code, and also the
+signed transaction JSON which users can save to a file for transferring back
+to the online workstation.
+
+Back on the online workstation, users can scan the signature QR code into the
+"Raw Transaction Details" modal signature field, and broadcast the
+transaction. Alternatively, they can use the "Broadcast Transaction" tab of
+the "Transaction Operations" modal to broadcast the transaction JSON copied
+from the offline workstation.
+
+A command line tool, sign.sh, has been provided, for signing transaction JSON
+without needing to even have an Nxt server or a browser running.
+
+Note that when the transaction to be signed includes a message to be encrypted,
+the encryption is also performed on the offline workstation. However, when
+generating the unsigned transaction JSON on the online workstation, if using
+a remote node, the plain text content of the message must be sent to this node
+in order for it to prepare the transaction JSON. Therefore, use a local
+installation when preparing encrypted messages for offline signing, if the
+content of the message is sensitive.
+
+All tabs in the "Transaction Operations" modal that have both bytes and json
+input fields need to have only one of them filled. If in doubt, using the json
+is preferred, as it will work for all transactions. The bytes format is still
+accepted, when possible, for backwards compatibility, and for transferring
+using QR codes (as the json cannot fit in a QR representation).
+
+
+Other changes:
+
+The signTransaction API now also returns the full signed transaction JSON.
+
+The calculateFullHash API now also accepts unsignedTransactionJSON parameter.
+
+Added getLastTrades and getLastExchanges API, accepting a multivalue asset,
+respectively currencies parameter, and returning an array containing the last
+trade or exchange for each of those assets or currencies.
+
+Added fullHashToId utility API.
+
+Display warning when trying to issue an asset or currency with less than 2
+or more than 6 decimals.
+
+Display total value of currencies owned on dashboard. Set default leasing
+period to the maximum allowed (32767) in the UI. Other UI improvements.
+
+Updated jetty to version 9.2.13. If unpacking on top of existing installation,
+delete the lib subdirectory first.
+

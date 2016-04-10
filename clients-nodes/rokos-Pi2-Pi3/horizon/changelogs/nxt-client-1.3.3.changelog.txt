@@ -1,0 +1,35 @@
+Fixed incorrect guaranteed balance bug in getAccountLessors API.
+
+Added getAccountBlockCount API returning number of forged blocks for an account.
+
+Added includeCounts parameter to the getAssets API, to avoid getting trades,
+accounts, and transfers counts, if not needed.
+
+Cache hallmarked peer account balances to reduce number of database calls.
+Other minor performance improvements and bugfixes.
+
+Fixed decryption of purchased DGS goods. Fixed missing DGS purchase feedbacks.
+To repopulate the feedbacks table, this release will perform a blockchain
+rescan at first start.
+
+Added a hideDelisted parameter to the getDGSGoods API, default false. If true,
+delisted goods are not included in the results. This parameter has effect only
+if inStockOnly=false, as delisted goods are considered not to be in stock.
+
+UI bugfixes and improvements. Added themes settings and a corporate theme.
+Hide fee input when sending NXT in basic mode, and set to the minimum fee.
+
+Improved the http://localhost:7876/test page interface, allow custom API call
+selection, syntax highlighting of the response JSON.
+
+Added getAccountAssets API request, returning account asset balances for the
+specified account. If an asset parameter is also specified, only return balance
+for that asset. Unlike the getAccount API, this request can also take a height
+parameter, to return asset balance as of that height.
+
+Added getAssetAccountCount API request, returning number of accounts holding
+the specified asset, again with optional height parameter.
+
+Updated jetty to version 9.2.4. If unpacking on top of a previous installation,
+delete your lib directory first to remove the old jetty libraries.
+

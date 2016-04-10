@@ -1,0 +1,114 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright © 2013-2015 The Nxt Core Developers.                            ~
+  ~                                                                           ~
+  ~ See the AUTHORS.txt, DEVELOPER-AGREEMENT.txt and LICENSE.txt files at     ~
+  ~ the top-level directory of this distribution for the individual copyright ~
+  ~ holder information and the developer policies on copyright and licensing. ~
+  ~                                                                           ~
+  ~ Unless otherwise agreed in a custom licensing agreement, no part of the   ~
+  ~ Nxt software, including this file, may be copied, modified, propagated,   ~
+  ~ or distributed except according to the terms contained in the LICENSE.txt ~
+  ~ file.                                                                     ~
+  ~                                                                           ~
+  ~ Removal or modification of this copyright notice is prohibited.           ~
+  ~                                                                           ~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<header class="header">
+    <span id="logo">
+        <a href="#" class="logo" data-page="dashboard">
+        <img src="img/nhz_logo_small.png" style="opacity:0.95" />
+        </a>
+    </span>
+    <nav class="navbar navbar-static-top" role="navigation">
+        <a href="#" class="navbar-btn sidebar-toggle" id="offcanvas_toggle" role="button">
+            <span class="sr-only" data-i18n="toggle_navigation">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+        </a>
+        <div class="navbar-right">
+            <ul class="nav navbar-nav sends">
+                <li class="dropdown"><a href="#" data-toggle="modal" data-target="#send_money_modal" data-i18n="send_nxt">Send HZ</a></li>
+                <li class="dropdown"><a href="#" data-toggle="modal" data-target="#transfer_currency_modal" data-i18n="send_currency">Send Currency</a></li>
+                <li class="dropdown"><a href="#" data-toggle="modal" data-target="#send_message_modal" data-i18n="send_message">Send Message</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="#" id="unconfirmed_notification_menu" class="goto-page" data-page="transactions" data-subpage="unconfirmed" style="padding-top:13px;padding-bottom:13px;display:none;">
+                    <span class="badge nm_outer2" style="background-color: #fff;padding:3px;">
+                        <span class="badge nm_inner_subtype" style="background-color: #fff;">
+                            <span style="color:#337ab7;"><i class="fa fa-circle-o"></i> </span>
+                            <span style="color:#666;" id="unconfirmed_notification_counter"></span>
+                        </span>
+                    </span>
+                    </a>
+                </li>
+                <li style="display:none;"><a href="#" id="phasing_notification_menu" class="goto-page" data-page="transactions" data-subpage="phasing">
+                    <span class="badge nm_outer2" style="background-color: #fff;padding:3px;">
+                        <span class="badge nm_inner_subtype" style="background-color: #fff;">
+                            <span style="color:#337ab7;"><i class="fa fa-gavel"></i> </span>
+                            <span style="color:#666;" id="phasing_notification_counter"></span>
+                        </span>
+                    </span>
+                    </a>
+                </li>
+                <li><a href="#" id="notification_menu" data-toggle="popover" data-placement="bottom" data-content="" style="padding-top:13px;padding-bottom:13px;display:none;">
+                    <span class="badge nm_outer" style="background-color: #fff;padding:3px;">
+                        <span class="badge nm_inner_subtype"></span>
+                        <span class="badge nm_inner_total"></span>
+                    </span>
+                    </a>
+                </li>
+                <li><a href="#" class="goto-page" data-page="contacts"><i class="fa fa-user"></i></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a role="menuitem" tabindex="-1" href="#" class="goto-page" data-page="blocks"><i class="fa fa-bars"></i><span data-i18n="blocks">Blocks</span></a></li>
+                        <li><a role="menuitem" tabindex="-1" href="#" class="goto-page" data-page="peers"><i class="fa fa-cloud"></i><span data-i18n="peers">Peers</span></a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li><a href="#" class="goto-page" data-page="plugins_overview"><i class="fa fa-plug"></i><span data-i18n="plugins">Plugins</span></a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li><a href="#" class="goto-page" data-page="settings"><i class="fa fa-cog"></i><span data-i18n="settings">Settings</span></a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li><a href="#" data-toggle="modal" data-target="#token_modal"><i class="fa fa-code"></i><span data-i18n="generate_token">Generate Token</span></a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#hash_modal"><i class="fa fa-calculator"></i><span data-i18n="calculate_hash">Calculate Hash</span></a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#transaction_json_modal"><i class="fa fa-asterisk"></i><span data-i18n="transaction_operations">Transaction Operations</span></a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li><a href="#" data-toggle="modal" data-target="#upload_data_modal"><i class="fa fa-upload"></i><span data-i18n="upload_file">Upload File</span></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-question-circle"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a role="menuitem" tabindex="-1" href="https://horizonplatform.io/" target="_blank">HorizonPlatform.io</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li><a role="menuitem" tabindex="-1" href="https://horizonplatform.io/forums/" target="_blank" data-i18n="link_nxt_forum">Horizon Forum</a></li>                        
+                        <li><a role="menuitem" tabindex="-1" href="https://explorer.horizonplatform.io/" target="_blank" data-i18n="link_horizon_explorer">Horizon Explorer</a></li>                        
+                        <li><a role="menuitem" tabindex="-1" href="https://wiki.nxtcrypto.org/" target="_blank"><i class="fa fa-at"></i><span data-i18n="link_nxt_wiki">Nxt Wiki</span></a></li>
+                        <li><a role="menuitem" tabindex="-1" href="https://wiki.nxtcrypto.org/wiki/Nxt_client_interface" target="_blank"><i class="fa fa-at"></i><span data-i18n="link_interface_tutorial">Interface Tutorial</span></a></li>
+                        <li><a role="menuitem" tabindex="-1" href="https://wiki.nxtcrypto.org/wiki/Asset_Exchange" target="_blank"><i class="fa fa-at"></i><span data-i18n="link_asset_exchange_tutorial">Asset Exchange Tutorial</span></a></li>
+                        <li><a role="menuitem" tabindex="-1" href="https://wiki.nxtcrypto.org/wiki/Monetary_System" target="_blank"><i class="fa fa-at"></i><span data-i18n="link_monetary_system_tutorial">Monetary System Tutorial</span></a></li>
+                        <li><a role="menuitem" tabindex="-1" href="https://wiki.nxtcrypto.org/wiki/Voting_System" target="_blank"><i class="fa fa-at"></i><span data-i18n="link_voting_system_tutorial">Voting System Tutorial</span></a></li>
+                        <li><a role="menuitem" tabindex="-1" href="https://wiki.nxtcrypto.org/wiki/Phasing" target="_blank"><i class="fa fa-at"></i><span data-i18n="link_phasing_tutorial">Phasing Tutorial</span></a></li>
+                        <li><a role="menuitem" tabindex="-1" href="https://wiki.nxtcrypto.org/wiki/Plugins" target="_blank"><i class="fa fa-at"></i><span data-i18n="link_plugins_tutorial">Plugins Tutorial</span></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" id="logout_button_container">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="logout_button">
+                        <i class="fa fa-power-off"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a role="menuitem" tabindex="-1" href="#" onclick="NRS.logout()" data-i18n="logout">Log Out</a></li>
+                        <li><a role="menuitem" tabindex="-1" href="#" onclick="NRS.logout(true)" data-i18n="logout_stop_forging">Log Out &amp; Stop Forging</a></li>
+                        <li><a role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#logout_clear_user_data_modal" data-i18n="logout_clear_user_data">Log Out and Clear User Data</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
