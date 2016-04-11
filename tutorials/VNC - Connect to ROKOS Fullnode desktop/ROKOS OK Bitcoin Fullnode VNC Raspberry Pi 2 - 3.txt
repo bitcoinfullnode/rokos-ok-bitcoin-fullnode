@@ -9,6 +9,9 @@ sudo apt-get install xrdp
 
 sudo apt-get upgrade xrdp
 
+
+Windows: 
+
 2.- Now you can use Microsoft Remote Desktop and work remotely
     on ROKOS Raspberry Pi 2 3.
 
@@ -17,6 +20,14 @@ sudo apt-get upgrade xrdp
 go to start -> open -> and type "mstsc"
 
 Enter your Raspberry's Pi 2 or 3 IP (example: 192.168.1.5)
+
+Connect and sign in with your ROKOS Raspberry Pi User and Password.
+
+Mac OS:
+
+3.- Select your favorite mac vnc client and follow same procedure that on windows.
+
+Use Raspberry Pi 2 or 3 IP
 
 Connect and sign in with your ROKOS Raspberry Pi User and Password.
 
