@@ -4,7 +4,7 @@ Compile any cryptocurrency in the OK Bitcoin Fullnode OS for Raspberry Pi, Pi ze
 
 Requirement: 
 
--Download for free the latest ROKOS OK Bitcoin Fulnode OS from http://rokos.space
+-Download for free the latest OK Bitcoin Fullnode OS from http://rokos.space
 
 * Depending on the cryptocurrency you are looking to compile you might require to use Option A, or Option B.
 
