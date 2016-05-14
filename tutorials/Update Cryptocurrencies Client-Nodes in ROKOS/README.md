@@ -1,6 +1,7 @@
 ![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
 Tutorials to Update the Integrated Cryptocurrencies Clients-Nodes in the ROKOS System
 =========================== 
-* Permanent Integrated Cryptocurrencies:
+Update any of the Permanent Integrated Cryptocurrencies
 
-- Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash.
+#### If you need further support or want to say hi to the community you can join:
+[![Slack Community](https://img.shields.io/badge/slack-okrokos-blue.svg)](https://okcash.herokuapp.com)
