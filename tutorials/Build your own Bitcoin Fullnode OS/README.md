@@ -5,3 +5,6 @@ Tutorials to help you Build your own Bitcoin Fullnode OS from Zero.
 
 You can always just Download ROKOS for free and start using Bitcoin/Cryptocurrencies to empower yourself at:
 http://rokos.space
+
+#### If you need further support or want to say hi to the community you can join:
+[![Slack Community](https://img.shields.io/badge/slack-okrokos-blue.svg)](https://okcash.herokuapp.com)
