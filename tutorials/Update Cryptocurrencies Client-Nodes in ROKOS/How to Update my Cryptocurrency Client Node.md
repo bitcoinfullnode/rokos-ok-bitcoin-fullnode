@@ -2,7 +2,13 @@
 
 ## 1- Download the Client/node from the Official ROKOS Github client-nodes section at
 
-https://github.com/okcashpro/ROKOS-OK-Bitcoin-Fullnode/tree/master/clients-nodes
+https://github.com/BitcoinFullnode/ROKOS-OK-Bitcoin-Fullnode/tree/master/clients-nodes
+
+or clone the repository with:
+
+git clone https://github.com/BitcoinFullnode/ROKOS-OK-Bitcoin-Fullnode
+
+and get your binaries from the client-nodes folder.
 
 ## 2- Open a terminal in ROKOS, go to the folder where the new downloaded files are.
 
