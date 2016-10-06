@@ -4,4 +4,7 @@ ROKOS IoT Bitcoin and Cryptocurrencies Fullnode Open Source
 * Config files for the integrated cryptocurrencies.
 
 #### If you need further support or want to say hi to the community you can join:
-[![Slack Community](https://img.shields.io/badge/slack-okrokos-blue.svg)](https://okcash.herokuapp.com)
+
+<a href="https://discord.gg/grvpc8c">
+    <img alt="Logo" src="https://discordapp.com/api/guilds/213747404745211904/widget.png?style=banner2">
+  </a>
