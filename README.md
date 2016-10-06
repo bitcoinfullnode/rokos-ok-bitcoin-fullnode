@@ -1,7 +1,11 @@
 ![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
 ROKOS IoT Bitcoin and Cryptocurrencies Fullnode Open Source
 =========================== 
-* Author: OKtoshi
+
+### Join the new communications server
+<a href="https://discord.gg/grvpc8c">
+    <img alt="Logo" src="https://discordapp.com/api/guilds/213747404745211904/widget.png?style=banner2">
+  </a>
 
 * Integrated Cryptocurrencies / Tech in the Fullnode OS: **Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash, Horizon, MonetaryUnit, BigUp, OpenBazaar and Expanse.**
 
@@ -18,9 +22,9 @@ ROKOS Downloads, Resources, Feedback and Support Threads
 
 Website: http://rokos.space
 
-Website Github: https://github.com/okcashpro/rokos.space
+Website Github: https://github.com/BitcoinFullnode/rokos.space.website
 
-ROKOS Github: https://github.com/okcashpro/ROKOS-OK-Bitcoin-Fullnode
+ROKOS Github: https://github.com/BitcoinFullnode/ROKOS-OK-Bitcoin-Fullnode
 
 BTCTalk ROKOS Core support/feedback: https://bitcointalk.org/index.php?topic=1312616.0
 
@@ -80,8 +84,3 @@ Integrated: OKCash Synced Wallet
 BTC  15VrDkat5vD4FfycRk3E4e7EgqftzK6tm8
 
 OK  PWZg5F7NurKDNGdckRpQgmShEQhEHmF5W5
-
-
-#Live Support @ OK Community Slack
-
-[![Visit the OK Community Slack for Support!](https://kiwiirc.com/buttons/irc.freenode.net/ok-rokos-support.png)](https://okcash.herokuapp.com/)
