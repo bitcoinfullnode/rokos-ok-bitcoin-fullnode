@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.13.1
+Name=Bitcoin Core Client
+Comment=Bitcoin Graphical UI
+Categories=Network;
+Exec=/usr/local/bin/bitcoin-qt
+Icon=/usr/share/pixmaps/bitcoin.png
+Terminal=false
+Type=Application
