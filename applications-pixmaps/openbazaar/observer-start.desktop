@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=7.0.0.0
+Name=Start OpenBazaar Server
+Comment=Start OpenBazaar Server
+Categories=Network;
+Exec=/home/pi/ob-serv-start.sh
+Icon=/usr/share/pixmaps/obazaar.png
+Terminal=true
+Type=Application

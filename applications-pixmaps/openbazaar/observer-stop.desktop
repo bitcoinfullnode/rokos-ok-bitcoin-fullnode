@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=7.0.0.0
+Name=Stop OpenBazaar Server
+Comment=Stop OpenBazaar Server
+Categories=Network;
+Exec=/home/pi/ob-serv-stop.sh
+Icon=/usr/share/pixmaps/obazaar.png
+Terminal=true
+Type=Application
