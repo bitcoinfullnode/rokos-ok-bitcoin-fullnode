@@ -1,4 +1,4 @@
-![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
+![ROKOS-OK](http://i.imgur.com/BluqVIE.png)
 Tutorials Section for ROKOS Bitcoin Fullnode OS
 =========================== 
 * Tutorials, How To, Tips and/or feedback fixes to optimize performance.

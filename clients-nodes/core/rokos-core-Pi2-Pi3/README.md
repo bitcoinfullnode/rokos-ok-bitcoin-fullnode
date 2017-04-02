@@ -1,4 +1,4 @@
-![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
+![ROKOS-OK](http://i.imgur.com/BluqVIE.png)
 ROKOS IoT OK Bitcoin Fullnode Core Open Source
 =========================== 
 * Integrated Cryptocurrencies Compiled Nodes-Clients on ROKOS Core for Pi zero 2 & 3

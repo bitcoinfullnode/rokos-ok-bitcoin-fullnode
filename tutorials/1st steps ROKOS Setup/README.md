@@ -1,4 +1,4 @@
-![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
+![ROKOS-OK](http://i.imgur.com/BluqVIE.png)
 Tutorials to Burn ROKOS into MicroSD card, ROKOS Setup and First Steps.
 =========================== 
 * All the information required to start with your ROKOS OK Bitcoin Fullnode.

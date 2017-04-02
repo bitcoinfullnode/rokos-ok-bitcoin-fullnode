@@ -1,4 +1,4 @@
-![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
+![ROKOS-OK](http://i.imgur.com/BluqVIE.png)
 Tutorials to help you Build your own Bitcoin Fullnode OS from Zero.
 =========================== 
 * Tutorials and Tips to learn how to build a Bitcoin Fullnode OS from Zero (for the advanced user).

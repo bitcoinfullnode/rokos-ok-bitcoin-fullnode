@@ -1,4 +1,4 @@
-![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
+![ROKOS-OK](http://i.imgur.com/BluqVIE.png)
 Tutorials to Update the Integrated Cryptocurrencies Clients-Nodes in the ROKOS System
 =========================== 
 Update any of the Permanent Integrated Cryptocurrencies

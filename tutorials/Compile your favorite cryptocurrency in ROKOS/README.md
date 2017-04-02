@@ -1,4 +1,4 @@
-![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
+![ROKOS-OK](http://i.imgur.com/BluqVIE.png)
 Compile any cryptocurrency in the OK Bitcoin Fullnode OS for Raspberry Pi, Pi zero, Pi 2, Pi 3.
 =========================== 
 

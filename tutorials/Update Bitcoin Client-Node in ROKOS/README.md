@@ -1,4 +1,4 @@
-![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
+![ROKOS-OK](http://i.imgur.com/BluqVIE.png)
 Tutorials to Update the Bitcoin Client-Node in the ROKOS System
 =========================== 
 * Bitcoin Tutorials.
