@@ -8,7 +8,9 @@ ROKOS IoT OK Bitcoin Fullnode and Cryptocurrencies Open Source
     <img alt="Logo" src="https://discordapp.com/api/guilds/213747404745211904/widget.png?style=banner2">
   </a>
 
-* Integrated Cryptocurrencies / Tech in the Fullnode OS: **Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash, Horizon, MonetaryUnit, OpenBazaar and Expanse.**
+* Integrated Cryptocurrencies / Tech in the Fullnode **Core** OS: **Bitcoin, OKCash, Open Bazaar**  
+  
+* Integrated Cryptocurrencies / Tech in the Fullnode **Flavors** OS: **Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash, Horizon, MonetaryUnit, OpenBazaar and Expanse.**
 
 * Project evolution based on feedback/requests/suggestions from: Cryptocurrency developers, Cryptocurrency users and New users to Crypto over any of the public forums (Core, Flavors, Github) where everyone can get involved, participate and/or request for support.
 
@@ -54,63 +56,64 @@ http://letstalkpayments.com/fintech-at-ces-mastercard-coin-rokos-samsung-and-sof
 Releases
 ===========================
 
-#ROKOS Core for Raspberry Pi, zero, 2, 3 (v7) - October 31 2016
+**#ROKOS Core for Raspberry Pi, zero, 2, 3 (v7) - October 31 2016**
 
 Integrated: OKCash + Bitcoin / Full Node + Open Bazaar Server
 
 Download:
 http://bit.ly/rokos7coreRaspberry23
 
-#ROKOS Core for Pine64+ (v7) - October 28 2016
+**#ROKOS Core for Pine64+ (v7) - October 28 2016**
 
 Integrated: OKCash + Bitcoin / Full Node + Open Bazaar Server
 
 Download:
 http://bit.ly/rokos7corepine64
 
-#ROKOS Magic Flavors for Raspberry Pi, zero, 2, 3 (v6) - May 10 2016
+**#ROKOS Magic Flavors for Raspberry Pi, zero, 2, 3 (v6) - May 10 2016**
 
 Integrated: Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash, Horizon, MonetaryUnit, OpenBazaar and Expanse. / Full Nodes / Clients
 
 Download (Gdrive): 
 http://bit.ly/rokos6magicflavors
 
-#ROKOS flavors for Raspberry Pi 2 (v5) - March 07 2016
+**#ROKOS flavors for Raspberry Pi 2 (v5) - March 07 2016**
 
 Integrated: BTC, OK, GMC, BLK, DMD, DGC, ENRG, ERC, METAL, MOJO, SOIL, TX / Full Nodes / Clients
 
-#ROKOS core BTC for BananaPi PRO (v4) - Jan 21 2016
+**#ROKOS core BTC for BananaPi PRO (v4) - Jan 21 2016**
 
 Integrated: Bitcoin / Full Node
 
 Download (Gdrive): 
 http://bit.ly/rokos4coreBanana
 
-#ROKOS core BTC for RaspberryPI 2 (v4) - Dec 25 2015
+**#ROKOS core BTC for RaspberryPI 2 (v4) - Dec 25 2015**
 
 Integrated: OKCash synced + Bitcoin / Full Node
 
-#ROKOS Core BTC for RaspberryPI 2 (v3) - Dec 19 2015
+**#ROKOS Core BTC for RaspberryPI 2 (v3) - Dec 19 2015**
 
 Integrated: OKCash synced + Bitcoin / Full Node
 
-#ROKOS for RaspberryPI B+ / 2  (v2) - Jun 30 2015
+**#ROKOS for RaspberryPI B+ / 2  (v2) - Jun 30 2015**
 
 Integrated: OKCash synced + Bitcoin + Litecoin + Dogecoin / Full Node
 
-#ROKOS for RaspberryPi B+ / 2 (v1) - Jun 9 2015 
+**#ROKOS for RaspberryPi B+ / 2 (v1) - Jun 9 2015**
 
 Integrated: OKCash Synced Wallet
 
-#ROKOS for RaspberryPi Model B+ (v0.alpha-beta) - Dec 21 2014 - Closed alpha-beta.
+**#ROKOS for RaspberryPi Model B+ (v0.alpha-beta) - Dec 21 2014 - Closed alpha-beta.**
 
 Integrated: OKCash Wallet
 
 
-#Donations and Support
+Donations and Support
+===========================
 
 * ROKOS is Open Source and shared/released for free, If it helped your project or you like the work and feel kind and would like to help ROKOS grow continuously, you can support the project with a donation at:
 
-BTC  15VrDkat5vD4FfycRk3E4e7EgqftzK6tm8
+**BTC**  15VrDkat5vD4FfycRk3E4e7EgqftzK6tm8
 
-OK  PWZg5F7NurKDNGdckRpQgmShEQhEHmF5W5
+**OK**  PWZg5F7NurKDNGdckRpQgmShEQhEHmF5W5
