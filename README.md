@@ -102,6 +102,10 @@ Integrated: OKCash synced + Bitcoin + Litecoin + Dogecoin / Full Node
 
 Integrated: OKCash Synced Wallet
 
+#ROKOS for RaspberryPi Model B+ (v0.alpha-beta) - Dec 21 2014 - Closed alpha-beta.
+
+Integrated: OKCash Wallet
+
 
 #Donations and Support
 
