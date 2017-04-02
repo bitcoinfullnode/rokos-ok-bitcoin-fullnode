@@ -1,5 +1,6 @@
 ![ROKOS-OK](http://i.imgur.com/WHN1JGF.png)
-ROKOS IoT Bitcoin and Cryptocurrencies Fullnode Open Source
+
+ROKOS IoT OK Bitcoin Fullnode and Cryptocurrencies Open Source
 =========================== 
 
 ### Join the new communications server
@@ -32,7 +33,11 @@ BTCTalk ROKOS Flavors support/feedback: https://bitcointalk.org/index.php?topic=
 
 Raspberry Forums: https://www.raspberrypi.org/forums/viewtopic.php?f=41&t=112913
 
-Coverage at TechCrunch and CES2016 among others: 
+Coverage at Nasdaq - CES2017 among others:
+
+http://www.nasdaq.com/article/fintech-at-ces-mastercard-and-rokos-shake-things-up-cm734192
+
+Coverage at TechCrunch - CES2016 among others: 
 
 http://techcrunch.com/2016/01/04/the-rokos-core-os-turns-your-raspberry-pi-into-a-bitcoin-node/
 
