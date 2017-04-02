@@ -3,7 +3,7 @@ ROKOS IoT Bitcoin and Cryptocurrencies Fullnode Open Source
 =========================== 
 
 ### Join the new communications server
-<a href="https://discord.gg/grvpc8c">
+<a href="https://discord.io/bitcoin">
     <img alt="Logo" src="https://discordapp.com/api/guilds/213747404745211904/widget.png?style=banner2">
   </a>
 
