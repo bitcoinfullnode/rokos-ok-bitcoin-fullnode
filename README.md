@@ -47,9 +47,23 @@ http://letstalkpayments.com/fintech-at-ces-mastercard-coin-rokos-samsung-and-sof
 Releases
 ===========================
 
+#ROKOS Core for Raspberry Pi, zero, 2, 3 (v7) - October 31 2016
+
+Integrated: OKCash + Bitcoin / Full Node + Open Bazaar Server
+
+Download:
+http://bit.ly/rokos7coreRaspberry23
+
+#ROKOS Core for Pine64+ (v7) - October 28 2016
+
+Integrated: OKCash + Bitcoin / Full Node + Open Bazaar Server
+
+Download:
+http://bit.ly/rokos7corepine64
+
 #ROKOS Magic Flavors for Raspberry Pi, zero, 2, 3 (v6) - May 10 2016
 
-Integrated: Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash, Horizon, MonetaryUnit, BigUp, OpenBazaar and Expanse. / Full Nodes / Clients
+Integrated: Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash, Horizon, MonetaryUnit, OpenBazaar and Expanse. / Full Nodes / Clients
 
 Download (Gdrive): 
 http://bit.ly/rokos6magicflavors
