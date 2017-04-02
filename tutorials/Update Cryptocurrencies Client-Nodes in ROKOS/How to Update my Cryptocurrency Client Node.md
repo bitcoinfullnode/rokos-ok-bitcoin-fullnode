@@ -29,4 +29,4 @@ sudo cp okcashd /usr/local/bin/
 ### Your favorite Cryptocurrency client/nodes are upgraded on your ROKOS OK Bitcoin Fullnode system.
 
 #### If you need further support or want to say hi to the community you can join:
-[![Slack Community](https://img.shields.io/badge/slack-okrokos-blue.svg)](https://okcash.herokuapp.com)
+[![Discord Community](https://img.shields.io/badge/discord-bitcoinfullnode-blue.svg)](https://discord.io/bitcoin)

@@ -62,4 +62,4 @@ This will open the Wallet and start sync.
 ### Your OK Bitcoin Fullnode is ready for use, Keep Rocking with your ROK OS.
 
 #### If you need further support or want to say hi to the community you can join:
-[![Slack Community](https://img.shields.io/badge/slack-okrokos-blue.svg)](https://okcash.herokuapp.com)
+[![Discord Community](https://img.shields.io/badge/discord-bitcoinfullnode-blue.svg)](https://discord.io/bitcoin)
