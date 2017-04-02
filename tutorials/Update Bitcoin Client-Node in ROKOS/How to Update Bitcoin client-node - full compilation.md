@@ -6,7 +6,7 @@ To compile the new Bitcoin client in the ROKOS type all the commands in the term
 
 sudo apt-get install libevent-dev
 
-git clone -b 0.12 https://github.com/bitcoin/bitcoin 
+git clone -b 0.14 https://github.com/bitcoin/bitcoin 
 
 ## 2- Get in the Bitcoin directory and compile the client
 
