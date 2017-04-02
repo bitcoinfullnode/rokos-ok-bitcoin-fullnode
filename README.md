@@ -8,7 +8,7 @@ ROKOS IoT OK Bitcoin Fullnode and Cryptocurrencies Open Source
     <img alt="Logo" src="https://discordapp.com/api/guilds/213747404745211904/widget.png?style=banner2">
   </a>
 
-* Integrated Cryptocurrencies / Tech in the Fullnode OS: **Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash, Horizon, MonetaryUnit, BigUp, OpenBazaar and Expanse.**
+* Integrated Cryptocurrencies / Tech in the Fullnode OS: **Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Metalcoin, Soil, Mojo, Transfer, Kobocoin, Dash, Horizon, MonetaryUnit, OpenBazaar and Expanse.**
 
 * Project evolution based on feedback/requests/suggestions from: Cryptocurrency developers, Cryptocurrency users and New users to Crypto over any of the public forums (Core, Flavors, Github) where everyone can get involved, participate and/or request for support.
 
@@ -21,7 +21,9 @@ Native Bitcoin OKCash and Cryptocurrencies Full Nodes / versions for IoT
 ROKOS Downloads, Resources, Feedback and Support Threads 
 ===========================
 
-Website: http://rokos.space
+Website Core: http://rokos.space
+
+Support: https://discord.io/bitcoin
 
 Website Github: https://github.com/BitcoinFullnode/rokos.space.website
 
@@ -31,7 +33,12 @@ BTCTalk ROKOS Core support/feedback: https://bitcointalk.org/index.php?topic=131
 
 BTCTalk ROKOS Flavors support/feedback: https://bitcointalk.org/index.php?topic=1084908.0
 
+Website Flavors: http://rokos-flavors.space
+
 Raspberry Forums: https://www.raspberrypi.org/forums/viewtopic.php?f=41&t=112913
+
+Pine64 Forums: https://forum.pine64.org/archive/index.php?thread-2483.html
+
 
 Coverage at Nasdaq - CES2017 among others:
 
