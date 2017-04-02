@@ -1,0 +1,30 @@
+Significantly reduced the number of threads used when WebSockets are enabled.
+This should prevent the out of memory issues on some systems caused by
+excessive number of native threads created.
+
+Fixed important bugs in fork resolution during blockchain download.
+
+Improved blockchain download speeds, reduce load on hallmarked nodes and avoid
+slow peers during download.
+
+Send event notifications when using the eventRegister and eventWait APIs only
+after the database transaction has been committed, to make sure the changes
+that triggered the event are visible at the time the event is emitted.
+
+Added generateFileToken and decodeFileToken APIs, allowing creating and
+verifying tokens for files.
+
+Fixed file upload when using the test page.
+
+The maximum file size accepted for upload can be restricted using the new
+nxt.maxUploadFileSize property, default and minimum accepted value is 42 kB.
+
+
+Client UI:
+
+Fixed missing scrollbars in modals invoked from other modals.
+
+Updated some translations. Added Romanian translation (experimental).
+
+Updated bootstrap to version 3.3.4.
+

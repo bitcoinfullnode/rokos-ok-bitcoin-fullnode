@@ -1,0 +1,10 @@
+This is an experimental release. It is a required update for all testnet nodes,
+but is also possible to run on main net.
+
+Fixed a bug in parsing ExtendTaggedData transaction json which prevents such
+transactions from propagating between peers.
+
+Added permanent message option to most send transaction dialogs.
+
+Other minor bugfixes.
+

@@ -1,0 +1,55 @@
+Server Logic
+============
+Password protect the Debug APIs. The nxt.enableDebugAPI property is no longer
+used. Instead, the debug APIs which allow direct manipulation of the blockchain
+database are always enabled, but are now protected with a password, which needs
+to be set in the nxt.adminPassword property. Password is not required when the
+API server is listening on the localhost interface only (the default).
+The password protection can be disabled by setting nxt.disableAdminPassword=true.
+
+Some refactoring to allow creation and signing of transactions using the Java API
+even in the complete absence of blockchain data, as needed for the MintWorker.
+
+Minor peer networking improvement, addPeers and processBlock requests are now
+executed in the background.
+
+Improvements in fork resolution. The peer networking getNextBlocks API no longer
+limits the number of blocks returned to 1 MB total payload size, but always
+returns 720 blocks, if available.
+
+
+MintWorker
+==========
+Added nxt.mint.stopOnError property, default false. Minting will now continue,
+by default, even after an error occurred when sending the mint transaction to 
+the server.
+
+Minting transactions are now signed locally and sent to the server using the
+broadcastTransaction API. Thus the secretPhrase for the minting account is never
+sent to the server, and the server or the connection to it do not need to be
+trusted. The secretPhrase is also not logged to the log output anymore.
+
+
+User Interface
+==============
+Added second row of info boxes on Dashboard.
+
+Notifications for incoming messages.
+
+Reworked page navigation.
+
+Account leasing dialog now displays the number of blocks until lease expiration.
+
+Fixed named account links on the transaction info dialog.
+
+Client Translation
+==================
+Added language selection to welcome screen.
+
+Added translations for monetary system for different languages.
+
+Stable: English, Spanish, French, Lithuanian, Portuguese (Brazilian), Russian,
+Chinese (Simplified), Chinese (Traditional)
+
+Beta: German, Finnish, Galician, Croatian, Indonesian, Italian, Japanese, Dutch,
+Slovakian, Portuguese, Serbian (Cyrillic), Serbian (Latin), Ukrainian

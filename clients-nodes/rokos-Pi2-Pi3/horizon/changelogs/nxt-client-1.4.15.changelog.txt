@@ -1,3 +1,0 @@
-Possible fix for the invalid CurrencyMint counter exception.
-
-Made URLs in descriptions clickable and fixed potential XSS exploit problem.

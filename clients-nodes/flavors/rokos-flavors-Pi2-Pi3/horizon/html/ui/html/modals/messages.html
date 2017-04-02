@@ -1,0 +1,174 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright © 2013-2015 The Nxt Core Developers.                            ~
+  ~                                                                           ~
+  ~ See the AUTHORS.txt, DEVELOPER-AGREEMENT.txt and LICENSE.txt files at     ~
+  ~ the top-level directory of this distribution for the individual copyright ~
+  ~ holder information and the developer policies on copyright and licensing. ~
+  ~                                                                           ~
+  ~ Unless otherwise agreed in a custom licensing agreement, no part of the   ~
+  ~ Nxt software, including this file, may be copied, modified, propagated,   ~
+  ~ or distributed except according to the terms contained in the LICENSE.txt ~
+  ~ file.                                                                     ~
+  ~                                                                           ~
+  ~ Removal or modification of this copyright notice is prohibited.           ~
+  ~                                                                           ~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<div class="modal fade" id="send_message_modal" data-transaction-type="1" data-transaction-subtype="0" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" data-i18n="send_message">Send Message</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" id="send_message_form" autocomplete="off">
+                    <div class="callout callout-danger error_message" style="display:none"></div>
+                    <div data-replace-with-modal-template="recipient_modal_template"></div>
+                    <div class="form-group">
+                        <label for="send_message_message" data-i18n="message">MESSAGE</label>
+                        <textarea class="form-control" id="send_message_message" name="message" rows="4" tabindex="3"></textarea>
+                        <div style="margin-top:3px">
+                            <label for="send_message_encrypt" style="font-weight:normal;color:#666"><input type="checkbox" name="encrypt_message" id="send_message_encrypt" value="1" data-default="checked" checked="checked" /> <span data-i18n="encrypt_message">Encrypt Message</span></label>
+                        </div>
+                        <div style="margin-top:3px">
+                            <label for="send_message_permanent" style="font-weight:normal;color:#666"><input type="checkbox" name="permanent_message" id="send_message_permanent" value="1" data-default="checked" checked="checked" /> <span data-i18n="permanent_message">Message is Never Deleted</span></label>
+                        </div>
+                    </div>
+                    <div data-replace-with-modal-template="secret_phrase_modal_template"></div>
+                    <div data-replace-with-modal-template="advanced_fee_deadline_template"></div>
+                    <div data-replace-with-modal-template="advanced_approve_template"></div>
+                    <div data-replace-with-modal-template="advanced_rt_hash_template"></div>
+                    <div data-replace-with-modal-template="advanced_broadcast_template"></div>
+                    <div data-replace-with-modal-template="advanced_note_to_self_template"></div>
+
+                    <div class="callout account_info" style="display:none;margin-bottom: 0;"></div>
+                    <input type="hidden" name="request_type" value="sendMessage" data-default="sendMessage" />
+                    <input type="hidden" name="converted_account_id" value="" />
+                </form>
+            </div>
+            <div class="modal-footer" style="margin-top:0;">
+                <div class="advanced_info"><strong data-i18n="fee">Fee</strong>: <span class="advanced_fee">1 HZ</span> - <a href="#" data-i18n="advanced">advanced</a></div>
+                <button type="button" class="btn btn-default" data-dismiss="modal" data-i18n="cancel">Cancel</button>
+                <button type="button" class="btn btn-primary" data-loading-text="Submitting..." data-i18n="send_message_button;[data-loading-text]submitting">Send Message</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="upload_data_modal" data-transaction-type="6" data-transaction-subtype="0" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" data-i18n="upload_data">Upload Data</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" enctype="multipart/form-data" method="post" id="upload_data_form" autocomplete="off">
+                    <div class="callout callout-danger error_message" style="display:none"></div>
+                    <div class="form-group">
+                        <label for="tagged_data_name" data-i18n="name">NAME</label>
+                        <input type="text" class="form-control" name="name" id="tagged_data_name" placeholder="Entity Name" data-i18n="[placeholder]entity_name" autofocus tabindex="1" />
+                    </div>
+                    <div class="form-group">
+                        <label for="tagged_data_description" data-i18n="description">DESCRIPTION</label>
+                        <textarea class="form-control" id="tagged_data_description" name="description" rows="3" tabindex="2" placeholder="Enter a description" data-i18n="[placeholder]enter_a_description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tagged_data_tags"><span data-i18n="tags">TAGS</span> <i class="fa fa-question-circle show_popover" data-content="Choose up to 3 tags, separate them with comma's." data-i18n="[data-content]data_tags_help" data-container="body" style="color:#4CAA6E" ></i></label>
+                        <input type="text" class="form-control" name="tags" id="tagged_data_tags" placeholder="Tags (categories)" data-i18n="[placeholder]tags_categories" tabindex="3" />
+                    </div>
+                    <div class="form-group">
+                        <label for="tagged_data_type" data-i18n="mime_type">MIME TYPE</label>
+                        <input type="text" class="form-control" id="tagged_data_type" name="type" placeholder="Mime Type" data-i18n="[placeholder]mime_type_placeholder" tabindex="4"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="tagged_data_channel" data-i18n="channel">CHANNEL</label>
+                        <input type="text" class="form-control" id="tagged_data_channel" name="channel" placeholder="Channel Classification" data-i18n="[placeholder]channel_placeholder" tabindex="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="upload_file" data-i18n="file">File</label>
+                        <input type="file" id="upload_file" class="form-control" name="upload" tabindex="6">
+                    </div>
+                    <div data-replace-with-modal-template="secret_phrase_modal_template"></div>
+                    <div data-replace-with-modal-template="advanced_fee_deadline_template"></div>
+                    <div data-replace-with-modal-template="advanced_approve_template"></div>
+                    <div data-replace-with-modal-template="advanced_rt_hash_template"></div>
+                    <div data-replace-with-modal-template="advanced_broadcast_template"></div>
+                    <div data-replace-with-modal-template="advanced_note_to_self_template"></div>
+
+                    <div class="callout account_info" style="display:none;margin-bottom: 0;"></div>
+                    <input type="hidden" name="request_type" value="uploadTaggedData" data-default="uploadTaggedData" />
+                    <input type="hidden" name="isText" value="false" />
+                    <input type="hidden" name="filename" value="" />
+                </form>
+            </div>
+            <div class="modal-footer" style="margin-top:0;">
+                <div class="advanced_info"><strong data-i18n="fee">Fee</strong>: <span id="upload_data_fee_label" class="advanced_fee">1 HZ</span> - <a href="#" data-i18n="advanced">advanced</a></div>
+                <button type="button" class="btn btn-default" data-dismiss="modal" data-i18n="cancel">Cancel</button>
+                <button type="button" class="btn btn-primary" data-loading-text="Submitting..." data-i18n="upload_file_button;[data-loading-text]submitting">Upload File</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="extend_data_modal" data-transaction-type="6" data-transaction-subtype="1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" data-i18n="extend_data">Extend Data</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" method="post" id="extend_data_form" autocomplete="off">
+                    <div class="callout callout-danger error_message" style="display:none"></div>
+                    <div class="form-group">
+                        <label for="extend_data_transaction" data-i18n="transaction">TRANSACTION</label>
+                        <input type="text" class="form-control" name="transaction" id="extend_data_transaction" readonly/>
+                    </div>
+                    <div data-replace-with-modal-template="secret_phrase_modal_template"></div>
+                    <div data-replace-with-modal-template="advanced_fee_deadline_template"></div>
+                    <div data-replace-with-modal-template="advanced_approve_template"></div>
+                    <div data-replace-with-modal-template="advanced_rt_hash_template"></div>
+                    <div data-replace-with-modal-template="advanced_broadcast_template"></div>
+                    <div data-replace-with-modal-template="advanced_note_to_self_template"></div>
+                    <div class="callout account_info" style="display:none;margin-bottom: 0;"></div>
+                    <input type="hidden" name="request_type" value="extendTaggedData" data-default="extendTaggedData" />
+                </form>
+            </div>
+            <div class="modal-footer" style="margin-top:0;">
+                <div class="advanced_info"><strong data-i18n="fee">Fee</strong>: <span id="extend_data_fee_label" class="advanced_fee">1 HZ</span> - <a href="#" data-i18n="advanced">advanced</a></div>
+                <button type="button" class="btn btn-default" data-dismiss="modal" data-i18n="cancel">Cancel</button>
+                <button type="button" class="btn btn-primary" data-loading-text="Submitting..." data-i18n="extend_data_button;[data-extend-text]submitting">Extend Data</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="messages_decrypt_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" data-i18n="decrypt_messages">Decrypt Messages</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" autocomplete="off">
+                    <div class="callout callout-danger error_message" style="background:#fbe7e7" data-i18n="passphrase_required_for_decryption">Your passphrase is required to decrypt these messages.</div>
+                    <div class="form-group secret_phrase">
+                        <label for="messages_decrypt_password" data-i18n="passphrase">PASSPHRASE</label>
+                        <input type="password" name="secretPhrase" id="messages_decrypt_password" class="form-control" placeholder="" tabindex="8">
+                    </div>
+                    <div class="form-group" style="margin-bottom:0">
+                        <input type="checkbox" name="rememberPassword" id="messages_decrypt_remember_password" /> <span></span><label for="messages_decrypt_remember_password" style="font-weight:normal;" data-i18n="remember_decryption_passphrase">Remember passphrase for decryption</label>
+                    </div>
+                    <input type="hidden" name="request_type" value="decryptMessages" />
+                </form>
+            </div>
+            <div class="modal-footer" style="margin-top:0;">
+                <button type="button" class="btn btn-default" data-dismiss="modal" data-i18n="cancel">Cancel</button>
+                <button type="button" class="btn btn-primary" data-loading-text="Decrypting..." data-i18n="decrypt;[data-loading-text]decrypting">Decrypt</button>
+            </div>
+        </div>
+    </div>
+</div>

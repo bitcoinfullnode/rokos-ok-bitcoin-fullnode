@@ -1,0 +1,216 @@
+This is the first release which stores all derived objects in the database,
+instead of keeping all of them in memory only.
+
+Derived objects are those that are constructed based on the information already
+available in the blockchain blocks and transactions - i.e, Accounts, Aliases, 
+Assets, Goods, Purchases, Orders, Trades. Storing them in the database instead of
+in memory means the Asset Exchange and the Digital Goods Store can scale to much
+higher number of assets, orders, and goods, without requiring an ever growing
+amount of memory for each node.
+
+Using a standard SQL database tables to store those records also allows for
+much more sophisticated queries, and allows third parties to write and execute
+custom queries against those tables directly, without being dependent on the NRS
+http API only.
+
+By storing the state of all derived objects as of the current height, plus their
+state at previous heights up to 1440 blocks back, it is possible to completely
+eliminate the need for blockchain rescans on startup, and on fork resolution.
+
+On upgrade from 1.2.8 and older releases, this version will perform an initial
+build of the derived objects tables, which on a fast machine takes about 4 min,
+but may take longer depending on your hardware. The database size will again grow
+during this rescan, but after shutdown should shrink back to around 550 MB.
+
+There will be no rescans on subsequent restarts, and the startup time is now
+reduced to a few seconds only. There will also be no rescans at runtime on block
+pop offs.
+
+Derived object tables are kept small by trimming them, only records needed to
+allow rollback of up to 1440 blocks back are kept. If you need to preserve and
+query historical information going back all the way to height 0, this trimming
+can be disabled by setting nxt.trimDerivedTables=false (default is true) in
+nxt.properties. After changing this property, a rebuild of the derived tables
+can be triggered using the new scan API request, see below.
+
+The default number of rollback records kept can be increased while still keeping
+trimming enabled, by setting nxt.maxRollback to a higher value (default and
+lowest possible is 1440). This should provide a compromise for those who want to
+keep history of more than the default 1440 blocks, yet want to avoid the
+performance penalty of never trimming the derived objects tables.
+
+To allow for the increased use of database, default max number of database 
+connection has been increased to nxt.maxDbConnections=30, and lock timeout
+increased to nxt.dbDefaultLockTimeout=60 in nxt-default.properties.
+
+Slower machines and high traffic public nodes may experience database lock
+timeouts with the default settings. To prevent those, MVCC mode can be enabled
+by appending MVCC=TRUE to the jdbc url in nxt.properties. MVCC is not enabled
+by default however, because while providing for higher concurrency under
+multiple simultaneous connections, and thus avoiding timeouts, it is also slower
+overall and less well tested.
+
+To help with debugging potential bugs, default logging level has been set to
+nxt.level=FINE in logging-default.properties for this release, which will cause
+more output than usual in the log.
+
+
+API changes:
+
+The following existing APIs now allow optional pagination using firstIndex,
+lastIndex parameters:
+
+getAccountBlockIds, getAccountCurrentAskOrderIds, getAccountCurrentBidOrderIds,
+getAliases, getAllAssets, getAllTrades, getAskOrderIds, getBidOrderIds,
+getAskOrders, getBidOrders, getAssetIds, getAssetsByIssuer.
+
+The limit parameter is no longer accepted by the getAskOrderIds, getBidOrderIds,
+getAskOrders and getBidOrders APIs, as firstIndex/lastIndex parameters are now
+used instead for pagination.
+
+getAccountBlockIds in addition to allowing pagination now returns the blocks
+in descending order, as this is more useful when showing the newest blocks
+on top in the client.
+
+getTrades now accepts an optional account parameter, in addition to asset, to
+allow retrieving trade history for a specific account, for either all assets or
+a specific asset only.
+
+getUnconfirmedTransactions and getUnconfirmedTransactionIds now also accept
+the RS account number format.
+
+The Trade JSON now includes buyer and seller account ids, the height at which
+the trade occurred, the asset name, and the heights at which the ask and bid
+orders were accepted in the blockchain.
+
+The Asset JSON now includes total number of transfers, and number of accounts
+holding the asset.
+
+parseTransaction does not just return an error when trying to parse an invalid
+transaction bytes or JSON, but adds a validate=false field, plus the actual error 
+message, in addition to the parsed transaction JSON.
+
+getState no longer includes total effective balance.
+
+
+New API requests:
+
+getAccountBlocks - like getAccountBlockIds, but returning full block JSON.
+If includeTransactions parameter is true, also includes the transaction JSON.
+
+getAccountCurrentAskOrders and getAccountCurrentBidOrders - 
+like getAccountCurrentAskOrderIds and getAccountCurrentBidOrderIds, but returning
+full order JSON.
+
+getAllOpenAskOrders and getAllOpenBidOrders now replace getAllOpenOrders, but
+only returning ask or bid orders respectively, and allow firstIndex/lastIndex
+pagination.
+
+getAssetTransfers - retrieves the asset transfers for an asset, account, or both,
+sorted by height descending.
+
+getAssetAccounts - accepts an asset parameter and returns all accounts holding
+this asset as of the current height, and the asset quantity each one owns, sorted
+by asset quantity descending.
+Takes an optional height parameter to allow retrieving asset holders as of a
+previous blockchain height.
+
+getAccountLessors - retrieves the accounts that have leased their balance to the
+specified account, takes an optional height parameter to allow querying previous
+blockchain heights.
+
+The historical height query feature in getAssetAccounts and getAccountLessors
+depends on the specified height records still being available, i.e. either table
+trimming disabled, or maxRollback set high enough to cover that height.
+
+longConvert - an utility API to convert between signed long ids as used in the
+database and unsigned long ids represented as strings. Accepts an id in either
+form and returns both the signed and unsigned versions.
+
+getECBlock - returns the ecBlockId and ecBlockHeight given an optional timestamp,
+current time if not supplied.
+
+
+New debug API requests:
+
+The following requests are used for debugging purposes only and should not
+normally be needed. They are disabled by default, set nxt.enableDebugAPI=true in
+the properties to enable them. Do not enable on a public node where the API is
+accessible to anyone.
+
+fullReset - delete and redownload the whole blockchain.
+
+popOff - accepts a numBlocks or height parameters, and pops off that many blocks
+or back to that height. If table trimming is enabled (default), at most 1440
+blocks can be popped off. Derived object tables are rolled back to the specified
+height and blocks and transactions after that height are deleted.
+
+scan - accepts a numBlocks or height parameters, rolls back the derived object
+tables to that height and rebuilds them by rescanning the existing blockchain
+from that height up again. Does not delete blocks or transactions from the
+blockchain, unlike the popOff request. A request to rescan more than 1440 blocks
+when table trimming is enabled will do a full rescan starting from height 0.
+Setting validate parameter to true will also re-verify signatures and re-valudate
+blocks and transactions during the rescan.
+
+
+DbShellServlet:
+
+A command line access to the H2 database at runtime is now possible at:
+http://localhost:7876/dbshell
+This page uses the H2 shell tool to allow querying the database at runtime,
+directly from the browser, without having to enable auto server mode in the jdbc
+url. This servlet is only enabled if nxt.enableDebugAPI=true, and is very unwise
+to enable on a publicly accessible node as it allows full read and write access
+to the database.
+
+
+The usability of the http://localhost:7876/test API access page has been further
+improved.
+
+
+Packaging changes:
+
+To prevent intentional misunderstanding of why jar files hashes are never
+reproducible, the class files are now left unpacked in a classes subdirectory
+after compilation, instead of being packaged in a nxt.jar file. The run.sh and
+run.bat scripts have been modified to include this directory on the classpath
+instead of the nxt.jar file. Those who still prefer to build a nxt.jar file, can
+easily do that with the included jar.sh script, and modify the classpath to use
+it. A pre-built nxt.jar file will still be included for a few releases, as it
+is expected by the restart code when upgrading from an older version, but is not
+otherwise used.
+
+
+Other internal changes:
+
+Everywhere, object ids that used to be Longs are now primitive longs, as their
+use as HashMap keys is no longer needed.
+
+Preserve and re-process unconfirmed transactions after fork resolution pop-off.
+Improved propagation of unconfirmed transactions.
+
+Multiple minor improvements and optimizations based on profiling results.
+
+Merged in code to enable future variable fees based on transaction type and
+transaction size.
+
+Updated Jetty to version 9.2.3.
+
+Added an option to disable transaction re-broadcasting by setting the property
+nxt.enableTransactionRebroadcasting to false (default is enabled).
+
+
+Testnet:
+
+This release will reset the testnet blockchain back to height 77431. Testnet
+nodes staying with 1.2.8 are already on a different fork.
+
+
+There is no urgency to upgrade on main net, both 1.2.8 and 1.3.0 versions can
+coexist on the network and there is no hard fork involved. The local database
+changes however are not reversible, if you upgrade to 1.3.0 and decide to go
+back to 1.2.8, you will need to delete the nxt_db folder and re-download the
+blockchain.
+
+

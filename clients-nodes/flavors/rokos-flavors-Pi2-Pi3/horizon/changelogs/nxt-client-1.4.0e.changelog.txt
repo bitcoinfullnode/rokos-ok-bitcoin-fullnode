@@ -1,0 +1,72 @@
+This is the experimental release to test the new Monetary System major feature.
+It is enabled on testnet, and those running testnet nodes should upgrade to this
+release, even if they don't plan to use the MS features, otherwise will be left
+on a fork. This release is also possible to run on main net, but is not to be
+considered stable for production use there. The Monetary System block is not yet
+defined for main net.
+
+
+New features:
+
+Monetary System.
+See https://bitbucket.org/JeanLucPicard/nxt/issue/205/monetary-system-documentation
+for a detailed description.
+See https://bitbucket.org/JeanLucPicard/nxt/issue/207/mint-worker-utility for a
+description of the MintWorker tool for currency minting.
+
+Dividend payment transaction. Asset issuers can make a dividend payment to all
+asset holders with a single transaction. Required parameters are the blockchain
+height at which asset holders shares will be counted (must be less than 1440
+blocks in the past), and the amount to be paid per share.
+
+Delete alias transaction. The owner of an alias can now delete it completely,
+thus making the alias available for anyone to reserve again if desired.
+
+Message pattern in AccountInfo. An account owner can set a regular expression
+pattern in the AccountInfo for his account, using the setAccountInfo API.
+Once such a pattern has been set, incoming transactions to this account are only
+accepted if they contain a plain text message which matches this pattern. The
+syntax follows the java.util.regex.Pattern specification.
+
+
+API changes:
+
+After MS block, adding a public key announcement when sending a transaction to
+an account without a public key will be optional.
+
+Added withMessage boolean parameter to getAccountTransactions and 
+getAccountTransactionIds APIs, to return only transactions having a message
+attachment, either non-encrypted or decryptable by the account.
+
+Added optional includeLessors, includeAssets, and includeCurrencies boolean
+parameters to getAccount API. Set to false when retrieving those data is not
+needed, in order to improve the getAccount performance.
+
+After MS block, sending messages, selling aliases, and leasing balances, to the
+Genesis account, will be disallowed.
+
+The popOff debug API now allows pop off of more than max rollback number of
+blocks, triggering a full rescan in such case.
+
+
+Internal changes:
+
+After the Monetary System block, the order in which transactions in a block are
+executed will be determined by the block forger, instead of by id, default being
+by arrival time at the forger's node.
+
+Improvements in blockchain download to prevent getting stuck on the wrong fork.
+Nodes will download blocks in batches of not more than 719 blocks at a time
+from a single peer, and after each such batch will verify  with
+nxt.numberOfForkConfirmations other peers (default 5) if this is the best
+fork, before continuing, unless the downloaded batch is of less than 10 blocks.
+
+Rescan status is now saved in the database, to prevent the database from being
+left in an inconsistent state when a rescan fails or is interrupted. Once a
+rescan has been scheduled, it will be triggered again at restart, until it
+completes successfully.
+
+Improvements in the processing of unconfirmed transactions.
+
+This release will perform a rescan on first start.
+

@@ -1,0 +1,17 @@
+This is a mandatory update. Everyone should update to 1.4.7 or later before
+block 330000.
+
+The Message Pattern in AccountInfo feature, introduced in 1.4.0e, has been
+disabled, and will not be activated at block 330000. This is to prevent
+possible denial of service attacks by malicious regular expression patterns
+which can cause excessive CPU load with certain inputs. This feature will
+probably be introduced again in 1.5, but with a predefined set of allowed
+well behaved regex patterns.
+
+Multiple minor UI improvements and bugfixes.
+
+Enhanced nxt.allowedBotHosts property to also accepts a range of addresses
+using CIDR notation.
+
+This release will perform a rescan on first start, on testnet only.
+

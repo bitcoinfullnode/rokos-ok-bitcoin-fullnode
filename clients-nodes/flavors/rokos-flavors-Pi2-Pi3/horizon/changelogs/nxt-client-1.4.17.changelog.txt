@@ -1,0 +1,6 @@
+This is a critical bugfix release. Everyone is required to update.
+
+Fixed validation of asset exchange order cancellations.
+
+Fixed excessive memory usage in unconfirmed transaction processing.
+

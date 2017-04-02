@@ -1,0 +1,10 @@
+This is a critical bugfix release, everyone using 1.3.0 should upgrade.
+
+Fixed a bug in transaction loading which was causing transaction id's and
+signatures for some transactions with invalid ecBlock values to change after
+saving and reloading from the database.
+
+Report requestProcessingTime in the JSON of all API responses.
+
+Delay loading of block transactions from the database until they are needed.
+

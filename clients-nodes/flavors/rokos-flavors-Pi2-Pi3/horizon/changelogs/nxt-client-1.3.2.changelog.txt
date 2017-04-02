@@ -1,0 +1,60 @@
+Allow re-broadcasting of transactions already in the unconfirmed pool.
+
+Added clearUnconfirmedTransactions debug API to force clearing of the
+unconfirmed transactions pool.
+
+Show correct timestamps in asset transfer history.
+
+Only try to set account public key when inside a database transaction,
+fixes a bug in setting public keys for accounts that never had an
+outgoing transaction.
+
+getAccountLessors API now returns the guaranteed balance of each lessor
+too, as of the height specified in the optional height parameter. The
+format of the returned json has been changed to allow adding this
+guaranteedBalanceNQT property.
+
+getPeers now accepts an optional "state" parameter, to return only peers
+in that state. Possible values: CONNECTED, NON_CONNECTED, DISCONNECTED.
+If present, the active=true parameter takes precedence.
+
+getBlock now accepts an optional "timestamp" parameter, to return the
+last block as of that timestamp. The parameters to getBlock: "block",
+"height", "timestamp", are processed in that order of precedence, i.e.
+if both height and timestamp are specified, height is used and timestamp
+is ignored. If no parameters, current last block is returned.
+
+getState now accepts an optional "includeCounts" parameter, default true.
+If set to false, database table counts, which are slow to retrieve, are
+not included in the response.
+
+getTrades, getAllTrades, and getAssetTransfers API now accept an optional
+"includeAssetInfo" parameter, default true. If set to false, asset name
+and decimals are not included in the result Trade json, and not having to
+retrieve those speeds up the request processing.
+
+Added getBlocks API, returning the blocks ordered by height descending,
+and using firstIndex, lastIndex parameters for pagination. Restricted to
+return up to 100 blocks at a time. If includeTransactions is true, also
+includes the full transaction JSON.
+
+Improved default H2 cache size allocation. It nxt.dbCacheKB is not set,
+the H2 cache will vary linearly from 16MB for JVM heap size 160MB, to
+256MB for heap size 640MB or higher. This should allow low end devices
+to run without needing a custom setting for the nxt.dbCacheKB parameter,
+and prevent excessive memory use on machines with plenty of memory too.
+
+Disabled the SSLv3 protocol when using SSL for the API.
+
+
+Client UI improvements:
+
+Added pagination to the Blocks page. The default number of rows per page
+can be changed in settings.
+
+Show account balance in the sidebar on all pages.
+
+Improvements and bugfixes in the asset trade and transfer history pages.
+
+New design of the dashboard, and an improved recent transactions list.
+

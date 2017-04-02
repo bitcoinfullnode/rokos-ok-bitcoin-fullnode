@@ -1,0 +1,49 @@
+This is an experimental release. It is a required update for all testnet nodes,
+but is also possible to run on main net.
+
+Peer networking improvements.
+
+Announced addresses are always verified to resolve back to the peer address and
+not accepted if they don't. Old peer instances and old announced addresses are
+removed when a peer with dynamic IP changes address.
+
+If nxt.maxNumberOfKnownPeers (default 2000) is exceeded, the peers pool size is
+reduced back to nxt.minNumberOfKnownPeers (default 1000), keeping the highest
+hallmarked peers first.
+
+Peers are only identified by IP address now, not by address and port. Multiple
+nodes sharing the same IP address will be treated as one peer, with announced
+address and port as of the most recent GetInfo request or response sent out of
+or received from this address.
+
+Incompatible change: If using non-default port, the hallmark must also include
+that port, otherwise the hallmark is ignored.
+
+Optimizations in unconfirmed transaction propagation. When forwarding newly
+received unconfirmed transactions to peers, if their count exceeds 10, the
+broadcast is done in multiple batches of 10. When requesting unconfirmed
+transactions from a peer, the ids of the transactions currently in the pool
+are included in the request, so that the remote node does not need to include
+them in the response. The response size is also limited to 100 transactions,
+unless the requesting node does not provide such exclude parameter.
+
+Each tagged data can now also have a channel field. The searchTaggedData API
+can filter the search results by channel, and a new getChannelTaggedData API
+has been added to retrieve tagged data by channel, optionally filtered by
+account too.
+
+Fixed the UI for AddPeer and BlacklistPeer to accept admin password if needed.
+
+"Approve Transaction" action is now available in the transaction info actions
+tab.
+
+"Reveal Secret" field is added to the "Approve Transaction" modal when voting
+model is "By Hash".
+
+Enhanced the /test page to accept and pre-fill the test forms with any parameter
+values supplied in the url, e.g.:
+http://localhost:7876/test?requestType=getBlocks&lastIndex=10&includeTransactions=true
+
+
+This release will perform a full rescan on test net.
+

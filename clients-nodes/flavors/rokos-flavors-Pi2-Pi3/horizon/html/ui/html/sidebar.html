@@ -1,0 +1,49 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright © 2013-2015 The Nxt Core Developers.                            ~
+  ~                                                                           ~
+  ~ See the AUTHORS.txt, DEVELOPER-AGREEMENT.txt and LICENSE.txt files at     ~
+  ~ the top-level directory of this distribution for the individual copyright ~
+  ~ holder information and the developer policies on copyright and licensing. ~
+  ~                                                                           ~
+  ~ Unless otherwise agreed in a custom licensing agreement, no part of the   ~
+  ~ Nxt software, including this file, may be copied, modified, propagated,   ~
+  ~ or distributed except according to the terms contained in the LICENSE.txt ~
+  ~ file.                                                                     ~
+  ~                                                                           ~
+  ~ Removal or modification of this copyright notice is prohibited.           ~
+  ~                                                                           ~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<section class="sidebar">
+    <div class="user-panel">
+        <div class="pull-left info">
+            <div class="pull-left info">
+                <div style="margin-bottom:5px;"><a href="#" id="account_name" data-toggle="modal" data-target="#account_info_modal" data-i18n="no_name_set">No Name Set</a></div>
+                <div id="account_id_dropdown" class="dropdown" style="margin-bottom:5px">
+                    <span id="account_id" class="dropdown-toggle" data-toggle="dropdown" data-type="account_id" style="font-weight:bold"></span>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation" class="copy_link"><a role="menuitem" tabindex="-1" href="#" data-type="account_rs" data-i18n="copy_account_id">Copy Account ID</a></li>
+                        <li role="presentation" class="remote_only copy_link"><a role="menuitem" tabindex="-1" href="#" data-type="message_link" data-i18n="copy_send_message_link">Copy "Send Message" Link</a></li>
+                        <li role="presentation" class="remote_only copy_link"><a role="menuitem" tabindex="-1" href="#" data-type="send_link" data-i18n="copy_send_nxt_link">Copy "Send HZ" Link</a></li>
+                    </ul>
+                </div>
+                <a id="sideBalance" data-target="#account_details_modal" data-toggle="modal" href="#"><span id="account_balance_sidebar" class="loading_dots"><span>.</span><span>.</span><span>.</span></span> HZ</a>
+                <a href="#" data-page="peers" id="connected_indicator" class="connected goto-page" style="display:none;font-size:13px;"><i class="fa fa-circle" style="font-size:12px;"></i> <span data-18n="connected">Connected</span></a>
+                <a href="#" id="forging_indicator" class="forging" style="display:none;font-size:13px;">
+                    <i class="fa fa-circle" id="forging_status" data-toggle="tooltip" title="" data-placement="bottom" style="font-size:12px;"></i> <span data-18n="forging">Forging</span>
+                </a>
+            </div>
+        </div>
+    </div>       
+    <form action="#" method="get" class="sidebar-form" id="id_search" autocomplete="off">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search by ID..." data-i18n="[placeholder]search_by_id">
+            <span class="input-group-btn">
+                <button type="submit" name="seach" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </form>             
+    <ul class="sidebar-menu" id="sidebar_menu">
+    </ul>
+    <div style="height:50px"></div> <!-- Dummy div, otherwise some browsers cut of the sidebar too high when scrolling on smaller screens -->
+</section>

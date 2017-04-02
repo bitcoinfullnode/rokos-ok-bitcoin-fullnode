@@ -1,0 +1,9 @@
+This is an experimental release. It is a required update for all testnet nodes,
+but is also possible to run on main net.
+
+Fixed processing of unconfirmed ExtendTaggedData transactions.
+
+AddPeer and BlacklistPeer APIs now require POST and admin password.
+
+This release will perform a full rescan on testnet.
+

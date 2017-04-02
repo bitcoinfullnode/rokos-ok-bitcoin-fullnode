@@ -1,0 +1,103 @@
+This is an experimental release. It is a required update for all testnet nodes,
+but is also possible to run on main net.
+
+This update adds the Prunable Tagged Data feature, planned to be enabled at the
+voting system block too.
+
+
+Prunable tagged data are similar to prunable plain messages with no recipient,
+but with additional searchable metadata fields added. This feature can be used
+for decentralized and trustless distribution of small (up to 42k, including
+the metadata) pieces of data, which are by default stored for two weeks only
+(24h on testnet), but can optionally be stored longer or indefinitely by some
+nodes, and can be verified against the blockchain even after their expiration.
+
+Currently each tagged data can have the following fields, in addition to the
+data itself: name (required), description, tags, type, isText, filename.
+
+Name, description and tags are indexed and searchable using Lucene. All data
+and metadata is prunable, after pruning only a single 32 byte hash remains.
+
+Fee for either uploading or extending tagged data is based on the total data
+size (including metadata), and is 1 NXT for up to 1k bytes, 0.1 NXT for each
+1k above, up to the limit of 42k.
+
+
+New APIs:
+
+UploadTaggedData - create and broadcast new tagged data.
+
+ExtendTaggedData - extend the expiration time of already uploaded tagged data.
+If the data is still available, only the transaction id is needed. If not,
+already pruned data can be resurrected by including (in addition to the
+original transaction id) all of its fields too, i.e. name, description, etc.
+Anyone can submit an extension, not only the original uploader. Each extend
+transaction increases the expiration deadline by two weeks (24 h on testnet).
+Extending an existing tagged data from another account does not change the
+original submitter account id by which it is indexed and searchable.
+
+VerifyTaggedData - used to verify expired tagged data downloaded from another
+node, against the hash in the current blockchain.
+
+SearchTaggedData - full text search on name, tags, and description, optionally
+filtered by submitter account.
+
+GetTaggedData - retrieve tagged data by transaction id.
+
+GetAccountTaggedData - retrieve all tagged data submitted by a given account.
+
+GetAllTaggedData - retrieve all existing tagged data.
+
+GetDataTags - returns the distinct tags of all tagged data, with the number
+of data having each tag.
+
+GetDataTagsLike - prefix search of data tags.
+
+GetDataTagCount - the total number of distinct tags.
+
+All the Get* and Search* APIs above can only retrieve tagged data that has
+not been pruned yet.
+
+There is no client UI support for any of these APIs. It is expected that
+specialized third party plugins will be developed for specific tagged data
+use cases, depending on file type and target user group.
+
+Currently the pruning of tagged data is controlled by the same configuration
+properties that are used for prunable messages expiration.
+
+Same as with prunable messages, when using broadcastTransaction API to submit
+an already signed tagged data upload transaction, the prunable parts must be
+in the prunableAttachmentJSON parameter in case transactionBytes parameter is
+used. If submitting transactionJSON, it already has the prunable parts.
+
+
+New debug APIs:
+
+GetAllBroadcastedTransactions - if transaction rebroadcasting is enabled,
+returns the unconfirmed transactions that have been broadcasted from this node
+but have not yet been received back from a peer.
+
+GetAllWaitingTransactions - returns the unconfirmed transactions that are
+currently temporarily kept in memory during transaction processing.
+
+RebroadcastUnconfirmedTransactions - if transaction rebroadcasting is enabled,
+causes transactions currently in the unconfirmed pool to be broadcasted to
+peers again, until received back.
+
+
+Other changes and bugfixes:
+
+Improved handling of invalid transactions during block generation. Fixed
+validation of AE order cancellation transactions. Fixed a memory leak in
+processing of unconfirmed transactions. Set the default limit on waiting
+unconfirmed transactions nxt.maxUnconfirmedTransactions to 1000.
+
+The DGS goods delivery data size will be limited to 1000 bytes after VS block.
+
+Bugfixes in prunable messages processing.
+
+Fixed phasing with whitelisted approval accounts.
+
+On testnet, this release will perform a full rescan on first start with
+rollback to height 263895.
+

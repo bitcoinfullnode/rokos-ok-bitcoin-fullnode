@@ -1,0 +1,38 @@
+This release removes compatibility with peers older than version 1.5, and no
+longer accepts connections from them.
+
+Conditional logic dependent on block 445000 has been removed where no longer
+necessary, as block 445000 has been passed now.
+
+Parallel blockchain download using 36-block segments is now the default
+regardless of height. Returning more than 36 blocks at a time by getNextBlocks
+is no longer supported.
+
+The maximum WebSockets message size and the maximum allowed response size to a
+getNextBlocks request have been reduced from 192 MB to 10 MB.
+
+A checksum at block 445000 has been added.
+
+Added isDownload field to the getBlockchainStatus and getState API response,
+indicating if blockchain download is in progress. This gets set to true when
+a batch of more than 10 blocks at once has been downloaded from a peer, and
+gets reset to false when an attempt to download more blocks from a peer does
+not result in any new blocks added.
+
+The peer requests getUnconfirmedTransactions, getMilestoneBlockIds,
+getNextBlockIds, getNextBlocks, processBlock, processTransactions,
+getCumulativeDifficulty, are being rejected while a blockchain download is in
+progress, as indicated by the above isDownloading property.
+
+The timestamp of the last connect attempt to a peer is now included in the peer
+JSON object.
+
+Added a connect parameter to DumpPeers debug API, to force a connection attempt
+to each known peer first, adminPassword required if needed.
+
+The run.bat script on Windows no longer uses the -server flag by default.
+
+Updating nodes of version older than 1.5 to this release will delete blocks
+after height 445000, to make sure such nodes are not left permanently stranded
+on the 1.4 fork.
+

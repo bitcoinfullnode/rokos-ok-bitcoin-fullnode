@@ -1,5 +1,0 @@
-GUI fixes:
-Ajax multiqueue disabled, this fixes issues with lost requests.
-Don't send prunable messages as default. (Checkbox "Message is Never Deleted" is now enabled.)
-Plugin version check fixed.
-Checkpoints updated
