@@ -67,9 +67,6 @@ http://bit.ly/rokos8coreR
 
 Integrated: OKCash + Bitcoin / Full Node + Open Bazaar Server
 
-Download:
-http://bit.ly/rokos7coreRaspberry23
-
 **#ROKOS Core for Pine64+ (v7) - October 28 2016**
 
 Integrated: OKCash + Bitcoin / Full Node + Open Bazaar Server
