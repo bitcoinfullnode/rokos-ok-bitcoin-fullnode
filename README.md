@@ -56,6 +56,13 @@ http://letstalkpayments.com/fintech-at-ces-mastercard-coin-rokos-samsung-and-sof
 Releases
 ===========================
 
+**#ROKOS Core for Raspberry Pi, zero, 2, 3 (v8) - April 7 2017**
+
+Integrated: OKCash + Bitcoin / Full Node + Open Bazaar Server / CGMiner deps
+
+Download:
+http://bit.ly/rokos8coreR
+
 **#ROKOS Core for Raspberry Pi, zero, 2, 3 (v7) - October 31 2016**
 
 Integrated: OKCash + Bitcoin / Full Node + Open Bazaar Server
