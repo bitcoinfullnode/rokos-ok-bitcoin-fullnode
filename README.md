@@ -10,7 +10,7 @@ ROKOS IoT OK Bitcoin Fullnode and Cryptocurrencies Open Source
 
 * Integrated Cryptocurrencies / Tech in the Fullnode **Core** OS: **Bitcoin, OKCash, Open Bazaar**  
   
-* Integrated Cryptocurrencies / Tech in the Fullnode **Flavors** OS: **Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Soil, Mojo, Transfer, Kobocoin, Dash, Horizon, MonetaryUnit, OpenBazaar, Expanse and Einsteinium.**
+* Integrated Cryptocurrencies / Tech in the Fullnode **Flavors** OS: **Bitcoin, OKCash, Gamecredits, Digitalcoin, Blackcoin, Diamondcoin, Energycoin, Europecoin, Soil, Mojo, Transfer, Kobocoin, Dash, MonetaryUnit, OpenBazaar, Expanse and Einsteinium.**
 
 * Project evolution based on feedback/requests/suggestions from: Cryptocurrency developers, Cryptocurrency users and New users to Crypto over any of the public forums (Core, Flavors, Github) where everyone can get involved, participate and/or request for support.
 
