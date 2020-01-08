@@ -1,4 +1,4 @@
-![ROKOS-OK](https://i.imgur.com/O54jieU.png)
+![ROKOS-OK](https://i.imgur.com/YYXJ9up.png)
 
 ROKOS IoT OK Bitcoin Fullnode and Cryptocurrencies Open Source
 =========================== 
