@@ -1,8 +1,10 @@
-![ROKOS-OK](http://i.imgur.com/BluqVIE.png)
+![ROKOS-OK](https://i.imgur.com/i5xr6Y2.png)
 
-ROKOS IoT OK Bitcoin Fullnode Core Open Source
+ROKOS • Bitcoin Full node OS IoT Open Source
 =========================== 
-* Nodes-Clients for the different IoT devices and Config files for the integrated cryptocurrencies in ROKOS Core.
+* Integrated Cryptocurrencies Compiled Nodes-Clients on ROKOS • Bitcoin Full node OS [core] 
+
+Bitcoin & Okcash
 
 #### If you need further support or want to say hi to the community you can join:
 
