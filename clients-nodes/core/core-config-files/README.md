@@ -1,5 +1,7 @@
-![ROKOS-OK](http://i.imgur.com/BluqVIE.png)
-ROKOS IoT OK Bitcoin Fullnode Core Open Source
+
+![ROKOS-OK](https://i.imgur.com/i5xr6Y2.png)
+
+ROKOS • Bitcoin Full node OS IoT Open Source
 =========================== 
 * Config files for the integrated cryptocurrencies in ROKOS Core.
 
@@ -8,3 +10,4 @@ ROKOS IoT OK Bitcoin Fullnode Core Open Source
 <a href="https://discord.io/bitcoin">
     <img alt="Logo" src="https://discordapp.com/api/guilds/213747404745211904/widget.png?style=banner2">
   </a>
+
