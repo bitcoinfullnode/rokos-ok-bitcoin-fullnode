@@ -1,0 +1,7 @@
+This is a critical bugfix release. Everyone is required to update.
+
+It fixes the validation of asset exchange order cancellations. 
+The missing validation can be exploited by an attacker. The bug could be used to transfer 
+coins of a foreign bid order at the cost of own unconfirmed balance. Furthermore leads the attack to a DOS. 
+
+Mac OS X run command 'mac-osx-run.command' added.

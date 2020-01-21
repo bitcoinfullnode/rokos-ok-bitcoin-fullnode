@@ -1,0 +1,11 @@
+
+New API call getRichList added. This request is very expensive, therefore it is protected with a password (nhz.adminPassword) for non localhost access.
+
+Versions less than 5.2 are blacklisted.
+
+Only calculate checksums when checkpoint check is disabled.
+
+Checkpoints updated and phasing block checksum added.
+
+Bouncy Castle library to version 1.53, Jetty to version 9.2.14 and weupnp to 0.1.4 updated.
+  

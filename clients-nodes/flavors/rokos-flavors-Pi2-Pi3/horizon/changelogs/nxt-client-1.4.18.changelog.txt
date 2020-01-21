@@ -1,7 +1,0 @@
-This is a bugfix release. Everyone is required to update.
-
-Set the content type to "text/plain; charset=UTF-8" when sending http requests
-to peers. This is an important bug fix, as the incorrect encoding of outgoing
-blocks and transactions containing some Unicode characters can prevent their
-propagation and lead to forks.
-

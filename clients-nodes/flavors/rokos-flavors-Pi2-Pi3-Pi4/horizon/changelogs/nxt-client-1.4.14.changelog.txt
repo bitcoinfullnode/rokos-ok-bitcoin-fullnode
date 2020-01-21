@@ -1,0 +1,4 @@
+Added debugging output for failing currency mint transactions.
+
+Reduced default numberOfForkConfirmations to 2.
+

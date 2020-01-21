@@ -1,0 +1,8 @@
+Peer networking improvements, better logging, bugfixes.
+
+News page now loads correctly when the wallet uses https.
+Nxt forum message updates are displayed instead of new topics.
+Feed refresh is performed whenever the news page is refreshed.
+
+Minor UI bugfixes.
+

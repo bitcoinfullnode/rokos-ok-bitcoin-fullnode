@@ -1,0 +1,42 @@
+Improved fork resolution by allowing a better difficulty block pushed from a
+peer to replace the current last block.
+
+When forging, do not accept a peer block with hit time after the next hit time
+of a currently forging account (i.e. prevent front-running in forging).
+
+Removed the possibility of a forger to miss his turn. Even if late, the block
+will still be generated and submitted.
+
+Delay forging and submission of blocks by 20 s, configurable via the
+nxt.forgingDelay property, in order to be able to accumulate more transactions
+in the forged block. The arrival of a front-running block from a peer however
+cancels that delay and the next block is generated up to 3 s earlier instead,
+which can be controlled via the nxt.forgingSpeedup property.
+
+The above time shifts apply to the physical time of block generation and
+submission only. Block timestamps are always fixed by the forging algorithm
+within 1 s accuracy, and are not possible to modify.
+
+Better logging of peer networking errors. Log, but do not blacklist missing or
+malformed JSON responses.
+
+UI for adding and blacklisting peers. Blacklisting from the UI is possible
+only when admin password is not needed (disabled or running on localhost).
+
+Database optimization. Moved the public key of accounts, transaction senders,
+and block forgers to a separate table, resulting in 15% reduction of total
+database size. This change will be performed at first start and will take some
+time. A shutdown after the first start is recommended to compact the database.
+
+Forging API improvements: getForging and stopForging now allow access using
+admin password instead of account secret phrase. This respectively retrieves
+the status of, or stops the forging of, all currently forging accounts. As
+with other admin password protected APIs, password is not required when the
+API server is listening on the localhost interface only. The getState API now
+also returns a needsAdminPassword boolean, to indicate this.
+
+Enforce that the nxt-default.properties file used matches the version of the
+current release.
+
+Added currency distribution dialog invoked using a link from the currency 
+transaction info dialog.

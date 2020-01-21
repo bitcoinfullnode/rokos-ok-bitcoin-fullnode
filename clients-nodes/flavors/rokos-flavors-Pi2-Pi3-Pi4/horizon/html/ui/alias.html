@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright © 2013-2015 The Nxt Core Developers.                            ~
+  ~                                                                           ~
+  ~ See the AUTHORS.txt, DEVELOPER-AGREEMENT.txt and LICENSE.txt files at     ~
+  ~ the top-level directory of this distribution for the individual copyright ~
+  ~ holder information and the developer policies on copyright and licensing. ~
+  ~                                                                           ~
+  ~ Unless otherwise agreed in a custom licensing agreement, no part of the   ~
+  ~ Nxt software, including this file, may be copied, modified, propagated,   ~
+  ~ or distributed except according to the terms contained in the LICENSE.txt ~
+  ~ file.                                                                     ~
+  ~                                                                           ~
+  ~ Removal or modification of this copyright notice is prohibited.           ~
+  ~                                                                           ~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Alias System Tool</title>
+		<script type="text/javascript">
+			function assignAlias() {
+				document.getElementById("ok").disabled = true;
+				document.getElementById("response").value = "";
+				var secretPhrase = document.getElementById("secretPhrase").value;
+				var alias = document.getElementById("alias").value;
+				var uri = document.getElementById("uri").value;
+				var feeNQT = 100000000 * document.getElementById("feeNXT").value;
+				var deadline = document.getElementById("deadline").value;
+				sendRequest("requestType=setAlias&secretPhrase=" + encodeURIComponent(secretPhrase)
+                        + "&aliasName=" + encodeURIComponent(alias) + "&aliasURI=" + encodeURIComponent(uri)
+                        + "&feeNQT=" + feeNQT + "&deadline=" + deadline);
+			}
+			function sendRequest(requestParameters) {
+				var request = new XMLHttpRequest();
+				requestParameters += "&" + Math.random();
+				request.open("POST", "/nhz");
+	            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                request.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("response").value = this.responseText;
+						document.getElementById("ok").disabled = false;
+					}
+				};
+				request.send(requestParameters);
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td colspan="2"><b>Assign alias</b><hr></td>
+			</tr>
+			<tr>
+				<td>Secret phrase:</td>
+				<td><input type="password" id="secretPhrase"></td>
+			</tr>
+			<tr>
+				<td>Alias:</td>
+				<td><input id="alias"></td>
+			</tr>
+			<tr>
+				<td>URI:</td>
+				<td><input id="uri"></td>
+			</tr>
+			<tr>
+				<td>Fee, HZ:</td>
+				<td><input id="feeNXT" value="1"></td>
+			</tr>
+			<tr>
+				<td>Deadline, minute:</td>
+				<td><input id="deadline"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><button id="ok" style="width: 100%;" onclick="assignAlias();">OK</button></td>
+			</tr>
+			<tr>
+				<td colspan="2">Server response</td>
+			</tr>
+			<tr>
+				<td colspan="2"><textarea id="response" style="width: 100%;"></textarea></td>
+			</tr>
+		</table>
+	</body>
+</html>

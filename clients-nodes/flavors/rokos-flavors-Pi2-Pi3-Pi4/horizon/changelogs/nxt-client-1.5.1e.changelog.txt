@@ -1,0 +1,163 @@
+This is an experimental release which adds the Prunable Messages feature. It
+will be enabled at the same block as the Voting and Phasing features.
+
+This is a required update for all testnet nodes, but is also possible to run
+on main net.
+
+
+New features:
+
+Prunable plain and encrypted messages.
+
+Plain and encrypted messages can now be created as prunable. For a prunable
+message, the message data itself is never a part of the transaction bytes.
+Instead, only a 32 byte sha256 hash of it is included in the bytes that are
+being signed, used to verify the signature, or to generate the full
+transaction hash or id. This makes it possible to completely remove the
+message data at a later time, keeping only that 32 byte hash, and still be
+able to verify the transaction signature and have the transaction hash and
+id unaffected by the pruning.
+
+Prunable messages have a predefined lifetime, after which their prunable parts
+are deleted from the blockchain. This lifetime is measured starting from the
+transaction timestamp of the message. When a node receives a transaction or
+a block from a peer, it is only required that the prunable parts of any
+prunable message are also included if their expiration time has not yet been
+reached. If it has, and a valid message hash is included instead, the block or
+transaction will still be accepted.
+
+Currently the minimum lifetime of all prunable data is set to 24 h for testnet,
+to allow easier testing of this feature. For main net, it is tentatively set
+to two weeks, but this is subject to change before the stable release. Note
+that pruning is performed at the same time as derived table trimming, which
+by default is every 1000 blocks, so the actual removal of the prunable data
+from the database will happen with some delay after their expiration time.
+
+A node can choose to keep prunable messages longer, by setting the
+nxt.maxPrunableLifetime property to a larger value. It cannot be set to
+prune them earlier. Changing this value only affect transactions received
+after the change. Pruning can be disabled completely by setting this property
+to -1.
+
+Prunable messages that have not yet been expired, but are past the minimum
+lifetime, are only retrievable using the getPrunableMessage(s) APIs, but
+are not included as part of their transaction JSON.
+
+If a transaction containing prunable attachments is phased, the prunable
+parts are nevertheless saved and available immediately, not at finish height.
+If their expiration deadline comes before the phasing finish height, they
+will be pruned and not available at finish height.
+
+Fees for prunable message attachments are set at 0.1 NXT per 1024 bytes, with
+the first 1024 bytes free (the regular transaction fee depending on its type
+still applies). This is again subject to change before the stable release.
+
+The full size of prunable message attachments is limited to 42 kbytes. Note
+that the full size is still included for the purpose of calculating the total
+block payload, even though only the 32 byte hash is in the transaction bytes.
+
+The size of regular plain and encrypted messages in this release has been
+restricted back to 1000 bytes, and will likely be reduced even further, before
+the stable release. This will be done in order to encourage users to switch to
+prunable instead of regular messages. Fees for regular message attachments
+will also be increased substantially.
+
+Creating prunable plain messages of less than 28 bytes is not allowed, as at
+such small sizes it is more efficient to store the full message instead of a
+32 byte hash of it. There is no lower limit on prunable encrypted messages.
+
+It is not possible for a transaction to have both prunable plain and prunable
+encrypted message at the same time. It is also not possible to have both
+prunable and regular message of the same type (plain or encrypted). It is
+however possible to have a regular plain message and an encrypted prunable
+message, or a prunable plain message and a regular encrypted message.
+
+Prunable encrypt-to-self messages are not currently supported as there seems to
+be no good use case for them.
+
+Prunable encrypted messages can optionally be compressed before the encryption
+(default is to compress). The compression status is stored and does not need to
+be specified when decrypting. Regular encrypted messages are still compressed
+by default, but this compression can now optionally be disabled. For backwards
+compatibility, since their current bytes format does not store the compression
+status, this needs to be specified again when decrypting, else an error or
+unreadable data will be returned.
+
+
+New APIs:
+
+GetPrunableMessage - returns the prunable message for a given transaction id,
+optionally decrypting it if encrypted and if a secretPhrase is supplied.
+
+GetPrunableMessages - returns all prunable messages for a given account id,
+optionally limiting to only those with another account as recipient or sender,
+and decrypting them if a secretPhrase is supplied.
+
+Prunable messages that have already been pruned are not returned by the above
+APIs.
+
+The UI for those APIs will be implemented in a later release.
+
+TrimDerivedTables - a debug API to trigger a derived tables trim, and prunable
+tables pruning.
+
+
+Changed APIs:
+
+All APIs that create a new transaction now also accept optional
+messageIsPrunable or encryptedMessageIsPrunable boolean parameters (default
+false). If true, the message or encrypted message attachment, if any, is
+created as a prunable message.
+
+To control whether compression is performed before the encryption or not,
+the new compressMessageToEncrypt and compressMessageToEncryptToSelf parameters
+can be used (default true).
+
+Prunable messages, if not yet pruned, are also returned as part of the
+transaction json by the getAccountTransactions API, using the same fields as
+the corresponding regular messages, but adding a messageIsPrunable or
+encryptedMessageIsPrunable boolean flag.
+
+ReadMessage now also handles prunable message attachments, if any. It takes
+an optional uncompressDecryptedMessage and uncompressDecryptedMessageToSelf
+(default true) parameters, only used for non-prunable messages (not needed
+for prunable ones).
+
+DecryptFrom accepts an optional uncompressDecryptedMessage parameter, and
+encryptTo accepts an optional compressMessageToEncrypt parameter, default true.
+
+
+INCOMPATIBLE changes:
+
+BroadcastTransaction has been modified to optionally accept all parameters that
+are needed to create a prunable plain or encrypted message (client side
+encryption only). This is required because the data for such messages is never
+a part of the transaction bytes themselves, so trying to broadcast a transaction
+that has a prunable part by only submitting its bytes to broadcastTransaction
+WILL FAIL, unless the corresponding parameters necessary to add the prunable
+parts are also supplied. Note that they need to exactly match the original
+parameters with which the transaction bytes have been created and signed.
+
+For non-prunable messages, broadcastTransaction behaves as before, but users
+are encouraged to start switching to prunable messages in view of the planned
+size restrictions and fee increases.
+
+The EncryptedData java class no longer handles compression internally, this is
+left to the caller of the encrypt and decrypt methods to do.
+
+
+Other changes:
+
+GetPolls now supports an optional includeFinished parameter (default false).
+
+Multiple bugfixes and improvements in the Voting System and Phasing UI.
+
+The limit on transaction deadline of 1440 minutes has been removed. It is now
+possible to create a transaction with a deadline of up to 32767 minutes. This
+has been done because many use cases of phasing require that the transaction
+bytes are prepared much earlier than the actual broadcasting of the transaction
+to the blockchain.
+
+This release will perform a database upgrade with a full rescan on first start.
+On testnet, it will cause a rollback to block 256935.
+

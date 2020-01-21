@@ -1,0 +1,4 @@
+Always enable Monetary System menu in the UI as we are after block 330000 now.
+
+There are no other changes from 1.4.7.
+

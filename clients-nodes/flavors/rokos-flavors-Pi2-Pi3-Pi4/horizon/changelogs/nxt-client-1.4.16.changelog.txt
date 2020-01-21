@@ -1,0 +1,7 @@
+Updated jetty to version 9.2.9 due to a critical security bug:
+
+http://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00074.html
+
+There are no code changes, only the jetty libraries have been updated.
+Delete the old lib folder before unpacking on top of a previous installation.
+

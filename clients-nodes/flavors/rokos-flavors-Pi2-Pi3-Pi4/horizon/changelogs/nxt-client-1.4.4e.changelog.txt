@@ -1,0 +1,10 @@
+Improvements and bugfixes in the UI of Monetary System, dividend payments, and
+account leasing.
+
+Added contacts export/import feature.
+
+Restrict currency exchange offer sell and buy supply not to exceed total sell
+and buy limit.
+
+This release will force a rescan on testnet only, deleting blocks after
+159306.

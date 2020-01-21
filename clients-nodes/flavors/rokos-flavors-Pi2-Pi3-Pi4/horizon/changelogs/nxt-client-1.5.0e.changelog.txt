@@ -1,0 +1,271 @@
+This is an experimental release for the Voting System and Phasing. It enables
+these features on testnet, and is a required update for all testnet nodes.
+
+It is also possible to run this version on main net, but the block at which the
+new features will be enabled has not been set yet.
+
+
+New features:
+
+
+Voting System.
+
+Voting System API calls:
+
+CreatePoll, CastVote, GetPoll, GetPolls, GetPollResult, GetPollVote,
+GetPollVotes, SearchPolls.
+
+Polls processing is optional. If nxt.processPolls=false (default is true), vote
+counting is not done and no poll results are stored. This can be used to reduce
+the load on lower performance nodes. It is still possible to get the results of
+a poll using getPollResult, as long as the required vote and balances data
+hasn't been trimmed yet.
+
+Regardless of the nxt.processPolls setting, votes for polls that finished
+before the last trim height (1441 blocks by default) are deleted and only
+aggregate results, if processing is enabled, are kept.
+
+Votes are weighted based on the voting model selected, which can be by account,
+by balance, by asset balance or by currency balance, and a minimum balance
+cutoff can also be specified. The voting model is defined when the poll is
+created, however a different voting model can be specified when calling the
+getPollResult API, to calculate on the fly an alternative vote counting, as
+long as vote data is still available.
+
+Voting multiple times, changing, or deleting votes is not allowed.
+
+The fee to create a poll is 10 NXT for a poll with up to 20 options, with 1 NXT
+additional fee for any additional option (max 100 options are possible).
+
+
+Phasing.
+
+Phasing API calls:
+
+ApproveTransaction, GetAccountPhasedTransactions,
+GetAccountPhasedTransactionCount, GetAssetPhasedTransactions,
+GetCurrencyPhasedTransactions, GetPhasingPoll, GetPhasingPolls,
+GetPhasingPollVote, GetPhasingPollVotes, GetVoterPhasedTransactions.
+
+A transaction of any type can be phased by adding a phased=true parameter and
+an appropriate set of phasing parameters. Phased transactions are accepted in
+the blockchain immediately (subject to all usual validations), but are executed
+only at finish height, if still valid and if the required quorum has been met.
+If not approved, or not valid at finish height, they remain in the blockchain
+but are never executed, and any changes they caused to the sender unconfirmed
+balance are reversed, except that the fee is not refunded.
+
+In addition to the voting models available in polls, phased transactions can
+use a whitelist of accounts (max 10) allowed to vote for the transaction.
+
+It is possible to vote for (approve) up to 10 phased transactions with a single
+approval transaction. This transaction will be accepted in the blockchain only
+if all phased transactions it is voting for are already in it.
+
+Voting multiple times is allowed but has no effect on vote counting, votes
+after the first vote from each account are ignored.
+
+It is also possible to make any transaction phased without needing voting for
+approval. This can be used to create transactions with deferred execution.
+
+Pay on reveal secret is supported as a voting model for phased transactions.
+When this voting model is used, the phased transaction must include the
+hash of a secret chosen by the sender (up to 100 bytes long), and an approval
+transaction for it is only accepted if it includes the secret that results in
+this hash. It does not matter who the sender of the approval transaction is,
+unless a whitelist is also defined. Supported hash functions currently are
+sha256, ripemd160, and sha256 followed by ripemd160. The codes to specify them
+as parameters are available from the getConstants API.
+
+Finally, it is possible to make a phased transaction that is released or
+rejected not on the basis of voting, but based on the presence of other
+transactions (linked transactions) in the blockchain at its finish height.
+To do that, up to 10 phasingLinkedFullHash transaction hashes can be defined
+when creating the phased transaction. Note that this does not create a
+dependency between the linked transactions themselves. This feature can be
+used to implement atomic execution of transactions of any type, provided the
+phased transaction is phasing safe. Transactions already in the blockchain
+before the acceptance of the phased transaction can also be linked, as long
+as they are not more than 60 days old, or themselves phased transactions.
+
+The deferred execution with no approval needed, pay on reveal secret, and
+linked transactions features are currently accessible using the API only, the
+UI for them will be completed in a later release.
+
+Similar to voting, the phasing data for phased transaction that finished before
+the last trim height is also deleted and only the aggregate approval results
+are kept.
+
+The fee for making a transaction phased depends on the voting model selected.
+For by-account voting with no minimum balance, or no voting needed, it is 1 NXT
+in addition to the regular fee for that particular transaction type. For voting
+that depends on voter balances, the additional phasing fee is 20 NXT.
+
+The fee for approving a phased transaction is 1 NXT for each phased
+transaction included in the vote.
+
+
+Variable size messages, encrypted messages, digital goods deliveries. After VS
+block, messages and encrypted messages will be allowed to be up to 40 kbytes
+long instead of 1000 bytes, with 1 NXT fee for each 1024 bytes. Digital goods
+deliveries can also be up to 40 kbytes, with 1 NXT fee for each 1024 bytes
+after the first 10k. A single transaction is always limited not to exceed the
+maximum block payload length, currently 255 * 176 bytes.
+
+
+Other new APIs:
+
+GetOrderTrades - given an askOrder, bidOrder, or both, returns all trades that
+were executed as a result of this order.
+
+GetDGSExpiredPurchases - returns the purchases for a given seller which have
+expired without being delivered.
+
+GetDGSTagsLike - returns all Digital Goods Store tags starting with a given
+(at least 2 characters long) prefix.
+
+GetAliasesLike - returns all Aliases starting with a given (at least 2
+characters long) prefix.
+
+SearchAccounts - full text search on account info (name and description).
+
+GetPlugins - returns a list of all installed plugins.
+
+DumpPeers - returns all active peers of a certain version.
+
+Shutdown - shuts down the server. Takes an optional scan parameter, if true
+the derived tables are truncated and a full rescan with validation is scheduled
+on next start. The resulting nxt_db folder is smaller, and a node bootstrapped
+with this database is going to verify the blockchain and rebuild all derived
+tables on start. While this ensures validity of the blockchain and all tables,
+it cannot verify that this is the current consensus blockchain and not a fork,
+therefore providing such a database for download is still not trustless.
+
+GetLog - returns the most recent log messages, kept in a memory buffer.
+
+GetStackTraces - returns the stack traces of the currently running threads.
+
+Shutdown, getLog and getStackTraces require the admin password.
+
+
+Changed APIs:
+
+CreateTransaction - to facilitate debugging and to allow preparing transaction
+bytes and json even for transactions that are currently invalid, if broadcast
+parameter is false, all relevant transaction fields (json, bytes, hash, etc)
+are still included in the result even in the case of invalid transaction.
+If broadcast=true, those fields are returned only in case of successful
+transaction broadcast, otherwise only the error messages are returned.
+This change affects all APIs that end up creating a new transaction.
+
+GetConstants - in addition to adding the new transaction types and subtypes,
+and the voting models, the format of the resulting json has been changed.
+
+Added optional timestamp parameter to getExchanges and getTrades.
+
+Added optional account parameter and pagination support to getCurrencyFounders.
+
+Always include errorCode and errorDescription in some API results that only had
+an error field in case of an error.
+
+Limit number of records returned by all APIs that support pagination to
+nxt.maxAPIRecords at a time (default 100), unless the admin password is
+provided or is not needed.
+
+AddPeer adds an isNewlyAdded boolean to the returned peer json, indicating
+whether the peer was not already known.
+
+
+Client changes:
+
+Extended UI in the "advanced" transaction modal dialog for every transaction 
+type for invoking the different variants of phased transactions (to be approved
+by a certain number of accounts or balance/asset/currency holders).
+
+New main sidebar item for the Voting System, modal to create the various types
+of polls, pages to find active polls and follow polls over time, list with own
+polls and votes casted.
+
+Generic notification system for incoming transactions showing the number
+of transaction types and total new transactions.
+
+Unconfirmed transactions are only displayed in the "Dashboard" and "My Transactions"
+pages and no longer appear in other tables.
+
+Transaction info dialog for AE Bid and Ask orders now displays a table containing
+the actual trades mathcing the specific order.
+
+New account login feature for faster login just by Nxt account.
+
+User specific client DB with new logout option to clear user data.
+
+Streamlined sidebar/navigation structure.
+
+Send Currency button added to the toolbar which invokes the transfer currency dialog
+
+Environment information, client settings and various diagnostic information is logged 
+to the browser's JavaScript console during startup and login.
+
+Phasing tab was added to the transaction info dialog of phased transactions.
+
+Various bug fixes.
+
+
+Client Plugin System:
+
+Functionality - The NRS client comes with a new plugin system, enabling third
+party developers to provide additional functionality for the client. Plugins
+can be activated/deactivated on startup, the status of installed plugins can be 
+seen on a separate settings page. Plugins can hook into the new "Plugins" 
+sidebar navigation item or provide their own navigation structure.
+
+Security - Plugins are not sandboxed or restricted in any way and have full 
+access to client functionality including the passphrase. It is essential to only 
+install plugins from trusted sources and in doubt don't use plugins together
+with accounts storing larger amounts of NXT. There are prominent security 
+warnings both on the login page and within the plugins folder.
+
+Installation - A Plugin is provided as an archived file containing the necessary
+HTML/JS/CSS files and can be installed by extracting the file in the plugins/
+client directory.
+
+Developer - For a plugin to be valid is has to follow a certain minimal file
+structure and be shipped with a manifest.json file with some meta information.
+Detailed information can be found in the DEVELOPERS.md file in the plugins/
+directory. There is also a "hello_world" example plugin to get an idea how
+things work.
+
+
+Other important changes:
+
+Fixed transaction ordering in AE order matching to always be by transaction
+index instead of by id, to take effect after Voting System Block.
+
+Enforce nxt.adminPassword if set, even if the APIServer is listening on
+localhost only.
+
+Added nxt.ignorePeerAnnouncedAddress and nxt.cjdnsOnly properties, relevant
+only for cjdns users or multihomed nodes.
+
+Default initial peers are now stored in nxt.defaultPeers and
+nxt.testnetDefaultPeers instead of being populated by NxtDbVersion on database
+creation.
+
+Allow the API server to handle both http and https requests on different ports,
+if nxt.apiServerSSLPort is set to a port different from nxt.apiServerPort and
+nxt.apiSSL=true. If the SSL and non-SSL ports are configured to be the same,
+the nxt.apiSSL property determines whether SSL is used or not. On testnet,
+non-SSL port is hardcoded to 6876 and SSL, if enabled, to 6877.
+
+Reduced the default nxt.maxRollback to 800. Also added a nxt.trimFrequency
+setting to control how often the trim is run, default 1000.
+
+This release requires Java 8 and will not run or compile with Java 7.
+
+run.bat has been updated to search for a Java 8 installation using the Windows
+registry.
+
+Updated Jetty to version 9.2.10 and Bouncy Castle to version 1.52. If unpacking
+on top of a previous installation, delete the old lib folder first.
+
+This release will perform a database upgrade with a full rescan on first start.
