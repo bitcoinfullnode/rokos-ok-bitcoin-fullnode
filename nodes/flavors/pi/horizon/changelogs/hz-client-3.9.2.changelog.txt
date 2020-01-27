@@ -1,6 +1,0 @@
-This release removes old transaction version 0 code. This prevents clients from creating transaction version 0 transactions. 
-The update is mandatory.
-
-Under the hood classes were renamed back to Nxt class naming convention. This makes the source code more Nxt compatible and improves maintenance and code merges.
-
-Checkpoints updated.
