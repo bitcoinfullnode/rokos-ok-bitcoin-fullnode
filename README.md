@@ -63,6 +63,13 @@ Integrated: Bitcoin + Okcash / Full Node + Dev tools and deps
 Download:
 https://sourceforge.net/projects/rokos-bitcoin-full-node/
 
+**#ROKOS [flavors] for Raspberry Pi, zero, 2, 3, 4 (v10) - January 25 2020**
+
+Integrated: Bitcoin, Okcash, Bitcoin cash, Litecoin, Dash, Dogecoin, Qtum, Navcoin, Blackcoin, Einsteinium, Diamond, Monetary Unit
+
+Download:
+https://sourceforge.net/projects/rokos-crypto-full-node-os/
+
 **#ROKOS [core] for Raspberry Pi, zero, 2, 3, 4 (v10) - January 11 2020**
 
 Integrated: Bitcoin + Okcash / Full Node + BFGminer / CGMiner + Dev tools and deps
