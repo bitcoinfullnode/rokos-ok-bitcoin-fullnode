@@ -56,12 +56,19 @@ http://letstalkpayments.com/fintech-at-ces-mastercard-coin-rokos-samsung-and-sof
 Releases
 ===========================
 
+**#ROKOS [core] for Pine64+ (v10) - February 06 2020**
+
+Integrated: Bitcoin + Okcash / Full Node + Dev tools and deps
+
+Download:
+https://sourceforge.net/projects/rokos-bitcoin-full-node/
+
 **#ROKOS [core] for Raspberry Pi, zero, 2, 3, 4 (v10) - January 11 2020**
 
 Integrated: Bitcoin + Okcash / Full Node + BFGminer / CGMiner + Dev tools and deps
 
 Download:
-https://bit.ly/rokos10corepid
+https://sourceforge.net/projects/rokos-bitcoin-full-node/
 
 **#ROKOS [flavors] for Raspberry Pi, zero, 2, 3 (v9) - January 26 2019 - Private.Internal.Testing**
 
