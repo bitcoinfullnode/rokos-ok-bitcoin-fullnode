@@ -144,6 +144,6 @@ Donations and Support
 
 * ROKOS is Open Source and shared/released for free, If it helped your project or you like the work and feel kind and would like to help ROKOS grow continuously, you can support the project with a donation at:
 
-**BTC**  15VrDkat5vD4FfycRk3E4e7EgqftzK6tm8
+**BTC**  3FsGJZMQMnf9hJf1oLayJo2gsmwcit6XAj
 
-**OK**  PWZg5F7NurKDNGdckRpQgmShEQhEHmF5W5
+**OK**  P9LeQGwcfPs3vYwJ19e1odvaKdJj7wiUut
