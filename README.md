@@ -61,7 +61,7 @@ Releases
 Integrated: Bitcoin 0.21 + Okcash 6.9.0.6 / Full Node + Dev tools and deps
 
 Download:
-https://sourceforge.net/projects/rokos-bitcoin-full-node/
+https://sourceforge.net/projects/rokos-bitcoin-full-node/files/ROKOS-CORE/ROKOS-CORE-RASPBERRY/
 
 **#ROKOS [core] for Pine64+ (v10) - February 06 2020**
 
