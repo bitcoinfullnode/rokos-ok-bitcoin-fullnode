@@ -56,6 +56,14 @@ http://letstalkpayments.com/fintech-at-ces-mastercard-coin-rokos-samsung-and-sof
 Releases
 ===========================
 
+**#ROKOS [flavors] for Raspberry Pi [All] (X1) - February 21 2021**
+
+Integrated: Bitcoin 0.21 + Okcash 6.9.0.6 + Litecoin 0.18.1 + Dash 0.16.1.1 + Blackcoin more 2.13.2.7 + Monetary Unit 2.2 + Dev tools and deps
+
+Download:
+https://sourceforge.net/projects/rokos-crypto-full-node-os/files/ROKOS-FLAVORS/ROKOS-FLAVORS-RASPBERRY/
+
+
 **#ROKOS [core] for Raspberry Pi [All] (X1) - February 19 2021**
 
 Integrated: Bitcoin 0.21 + Okcash 6.9.0.6 / Full Node + Dev tools and deps
